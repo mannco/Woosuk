@@ -6,9 +6,17 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import kr.ac.woosuk.java.fsg.controllers.GameController;
+
 public class GameView extends JPanel{
 	private JLabel scoreBoard;
 	private JPanel lifeBoard;
+	
+	private GameController gameController;
+	
+	public GameController getGameController() {
+		return gameController;
+	}
 	
 	public GameView() {
 		init();

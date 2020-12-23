@@ -2348,7 +2348,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -304,
+											"left": -272,
 											"top": 1472,
 											"height": 13
 										},
@@ -2359,11 +2359,11 @@
 												"$ref": "AAAAAAF2hapYI1NagXg="
 											},
 											"font": "Arial;13;1",
-											"left": 997,
+											"left": 1013,
 											"top": 1535,
-											"width": 140.8671875,
+											"width": 103,
 											"height": 13,
-											"text": "SuperSyringePowerUp"
+											"text": "PowerUp"
 										},
 										{
 											"_type": "LabelView",
@@ -2373,7 +2373,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -304,
+											"left": -272,
 											"top": 1472,
 											"width": 78.12060546875,
 											"height": 13,
@@ -2387,16 +2387,16 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -304,
+											"left": -272,
 											"top": 1472,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 992,
+									"left": 1008,
 									"top": 1528,
-									"width": 150.8671875,
+									"width": 113,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF2hapYI1NbhXA="
@@ -2421,9 +2421,9 @@
 										"$ref": "AAAAAAF2hapYIlNXIts="
 									},
 									"font": "Arial;13;0",
-									"left": 992,
+									"left": 1008,
 									"top": 1553,
-									"width": 150.8671875,
+									"width": 113,
 									"height": 10
 								},
 								{
@@ -2436,9 +2436,9 @@
 										"$ref": "AAAAAAF2hapYIlNXIts="
 									},
 									"font": "Arial;13;0",
-									"left": 992,
+									"left": 1008,
 									"top": 1563,
-									"width": 150.8671875,
+									"width": 113,
 									"height": 10
 								},
 								{
@@ -2452,7 +2452,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -152,
+									"left": -136,
 									"top": 736,
 									"width": 10,
 									"height": 10
@@ -2468,7 +2468,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -152,
+									"left": -136,
 									"top": 736,
 									"width": 10,
 									"height": 10
@@ -2476,9 +2476,9 @@
 							],
 							"font": "Arial;13;0",
 							"containerChangeable": true,
-							"left": 992,
+							"left": 1008,
 							"top": 1528,
-							"width": 150.8671875,
+							"width": 113,
 							"height": 45,
 							"nameCompartment": {
 								"$ref": "AAAAAAF2hapYI1NagXg="
@@ -4538,7 +4538,7 @@
 								"$ref": "AAAAAAF2hapYIlNZfMk="
 							},
 							"lineStyle": 1,
-							"points": "1065:1527;1064:1488;1120:1488;1121:1429",
+							"points": "1064:1527;1064:1488;1120:1488;1121:1429",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF2hbQn53yAqPA="
@@ -9568,7 +9568,7 @@
 											"font": "Arial;13;0",
 											"left": -192,
 											"top": -32,
-											"width": 73.67724609375,
+											"width": 78.12060546875,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -9744,7 +9744,7 @@
 											"font": "Arial;13;0",
 											"left": 112,
 											"top": 16,
-											"width": 73.67724609375,
+											"width": 78.12060546875,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -9920,7 +9920,7 @@
 											"font": "Arial;13;0",
 											"left": -112,
 											"top": 32,
-											"width": 73.67724609375,
+											"width": 78.12060546875,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -12053,7 +12053,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "SuperSyringePowerUp",
+					"name": "PowerUp",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",

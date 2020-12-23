@@ -1,5 +1,5 @@
 package kr.ac.woosuk.java.fsg.models.shots;
 
-public abstract class Shot {
+public abstract class Dshot {
 
 }

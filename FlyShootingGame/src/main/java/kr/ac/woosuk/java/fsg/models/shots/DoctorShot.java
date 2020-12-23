@@ -9,16 +9,15 @@ public abstract class DoctorShot {
    public int  ItemPosition() {
       return position;
    }
-   
-   public void attack() {
-      // TODO Auto-generated method stub
-      
-   }
 
    public int getAttackpoint() {
       
       return attackpoint;
    }
+
+	public void addPower(int powerlevel) {
+		this.attackpoint += powerlevel;
+	}
 
 
 }

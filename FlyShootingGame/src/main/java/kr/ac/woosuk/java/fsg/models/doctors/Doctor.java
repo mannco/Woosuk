@@ -1,6 +1,7 @@
 package kr.ac.woosuk.java.fsg.models.doctors;
 
 import kr.ac.woosuk.java.fsg.models.items.Item;
+import kr.ac.woosuk.java.fsg.models.items.PowerUp;
 import kr.ac.woosuk.java.fsg.models.shots.DoctorShot;
 import kr.ac.woosuk.java.fsg.models.shots.Syringe;
 
@@ -30,12 +31,15 @@ public abstract class Doctor {
 
 	public DoctorShot shot() {
 		// TODO Auto-generated method stub
-		return new Syringe();
+		DoctorShot shot = new Syringe();
+		shot.addPower(this.powerlevel-1);
+		return shot;
 	}
 
 	public void getPowerUp(Item item) {
-		// TODO Auto-generated method stub
-		
+		if(item instanceof PowerUp) {
+			this.powerlevel++;
+		}
 	}
 
 

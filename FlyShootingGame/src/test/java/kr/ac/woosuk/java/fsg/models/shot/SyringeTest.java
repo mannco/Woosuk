@@ -34,9 +34,10 @@ class SyringeTest {
 	      assertEquals(10, shot.getAttackpoint());
 	      //파워업 아이템을 먹음
 	      Item item = new PowerUp();
-	      //공격력 10에  아이템의 효과로 5를 더함
+	      //공격력 10에  아이템의 효과로 1를 더함
 	      doctor.getPowerUp(item);
-	      assertEquals(15, shot.getAttackpoint());
+	      shot = doctor.shot();
+	      assertEquals(11, shot.getAttackpoint());
 	   }
 
 }

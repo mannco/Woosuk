@@ -8,6 +8,7 @@ import kr.ac.woosuk.java.fsg.models.items.Item;
 import kr.ac.woosuk.java.fsg.models.items.PowerUp;
 import kr.ac.woosuk.java.fsg.models.items.ThumbsUp;
 import kr.ac.woosuk.java.fsg.models.shots.DoctorShot;
+import kr.ac.woosuk.java.fsg.models.shots.Syringe;
 
 class DoctorRedTest {
 
@@ -48,5 +49,6 @@ class DoctorRedTest {
 		doctor.getPowerUp(item);
 		assertEquals(4, doctor.getPowerLevel());
 	}
+	
 
 }

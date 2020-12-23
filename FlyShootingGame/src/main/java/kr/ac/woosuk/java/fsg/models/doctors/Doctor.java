@@ -2,6 +2,7 @@ package kr.ac.woosuk.java.fsg.models.doctors;
 
 import kr.ac.woosuk.java.fsg.models.items.Item;
 import kr.ac.woosuk.java.fsg.models.shots.DoctorShot;
+import kr.ac.woosuk.java.fsg.models.shots.Syringe;
 
 public abstract class Doctor {
 	protected int score;

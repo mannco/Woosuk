@@ -1,7 +1,8 @@
 package kr.ac.woosuk.java.fsg.models.shots;
 
 public class Syringe extends DoctorShot {
-public Syringe() {
-	this.attackpoint = 1;
-}
+	public Syringe() {
+		// TODO Auto-generated constructor stub
+		this.attackpoint = 10;
+	}
 }

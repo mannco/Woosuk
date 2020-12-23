@@ -23,14 +23,19 @@ public abstract class Doctor {
 		return score += 10;
 	}
 
-	public void getPowerUp(Item item) {
-		// TODO Auto-generated method stub
-		
-	}
-
 	public int getPowerLevel() {
 		// TODO Auto-generated method stub
 		return powerlevel += 1;
+	}
+
+	public DoctorShot shot() {
+		// TODO Auto-generated method stub
+		return new Syringe();
+	}
+
+	public void getPowerUp(Item item) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

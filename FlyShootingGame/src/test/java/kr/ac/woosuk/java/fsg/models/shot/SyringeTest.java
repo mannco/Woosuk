@@ -19,9 +19,18 @@ class SyringeTest {
 	void 공격_테스트() {
 		//주사기가 발사됨
 	      Doctor doctor =  new DoctorRed();
+	    //의사가 총알을 발사
 	      DoctorShot shot = doctor.shot();
 	      //주사기의 기본공격력은 10
 	      assertEquals(10, shot.getAttackpoint());
+	      //적이 생성됨
+	      Enemy virus = new Virus();
+	      //적의 체력은 20
+	      assertEquals(20, virus.hp());
+	      //총알이 바이러스를 때림
+	      shot.attackEnemy(virus);
+	      //체력이 20인 바이러스가 공격을 맞아서 10이 됨
+	      assertEquals(10, virus.hp());
 	}
 	
 	@Test

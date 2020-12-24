@@ -1,8 +1,10 @@
 package kr.ac.woosuk.java.fsg.models.shots;
 
+import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
+
 public abstract class DoctorShot {
-   public int attackpoint;
-   public int position;
+   protected int attackpoint;
+   protected int position;
 
 
    
@@ -18,6 +20,9 @@ public abstract class DoctorShot {
 	public void addPower(int powerlevel) {
 		this.attackpoint += powerlevel;
 	}
-
-
+	
+	
+	public void attackEnemy(Enemy virus) {
+		virus.attack(this.attackpoint);
+	}
 }

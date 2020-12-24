@@ -63,7 +63,7 @@ class DoctorRedTest {
 	       //총알이 바이러스를 때림
 	       shot.attackEnemy(virus);
 	       //체력이 20인 바이러스가 공격을 2번 맞아서 0이 됨
-	       assertEquals(0, virus.hp());
+	       assertNull(virus);
 	       //바이러스가 죽어서 점수 10점을 줌
 	       assertEquals(10, doctor.Score());
 	   }

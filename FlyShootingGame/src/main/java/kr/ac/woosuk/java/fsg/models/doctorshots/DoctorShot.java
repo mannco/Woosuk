@@ -29,9 +29,9 @@ public abstract class DoctorShot {
 	
 	public void Moveup() {
 		this.movedDistance = 10;      
-		}
+	}
 		   
-	public int getMoveup() {
+	public int moveableDistance() {
 		return movedDistance;
-		}
+	}
 }

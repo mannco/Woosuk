@@ -1,4 +1,4 @@
-package kr.ac.woosuk.java.fsg.models.shot;
+package kr.ac.woosuk.java.fsg.models.doctorshot;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,12 +6,12 @@ import org.junit.jupiter.api.Test;
 
 import kr.ac.woosuk.java.fsg.models.doctors.Doctor;
 import kr.ac.woosuk.java.fsg.models.doctors.DoctorRed;
+import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;
+import kr.ac.woosuk.java.fsg.models.doctorshots.Syringe;
 import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 import kr.ac.woosuk.java.fsg.models.enemies.Virus;
 import kr.ac.woosuk.java.fsg.models.items.Item;
 import kr.ac.woosuk.java.fsg.models.items.PowerUp;
-import kr.ac.woosuk.java.fsg.models.shots.DoctorShot;
-import kr.ac.woosuk.java.fsg.models.shots.Syringe;
 
 class SyringeTest {
 
@@ -51,4 +51,27 @@ class SyringeTest {
 		//테스트
 		assertEquals(11, shot.getAttackpoint());
 	}
+	
+	
+	@Test 
+	   void 주사기움직임_테스트() {
+	         //사전조건
+	      
+	      //주사기가 생성됨
+	      Doctor doctor = new DoctorRed();
+	      //의사가 총알 발사
+	      DoctorShot shot = doctor.shot();
+	      
+	      //행위
+	      
+	      //주사기가 위로 움직임
+	      shot.Moveup();
+	      
+	      
+	      //테스트
+	      
+	      //주사기가 10만큼 위로 움직임
+	      assertEquals(10, shot.getMoveup());
+	      
+	   }
 }

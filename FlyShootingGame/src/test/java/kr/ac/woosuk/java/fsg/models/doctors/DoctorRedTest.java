@@ -4,11 +4,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;
+import kr.ac.woosuk.java.fsg.models.doctorshots.Syringe;
+import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
+import kr.ac.woosuk.java.fsg.models.enemies.Virus;
 import kr.ac.woosuk.java.fsg.models.items.Item;
 import kr.ac.woosuk.java.fsg.models.items.PowerUp;
 import kr.ac.woosuk.java.fsg.models.items.ThumbsUp;
-import kr.ac.woosuk.java.fsg.models.shots.DoctorShot;
-import kr.ac.woosuk.java.fsg.models.shots.Syringe;
 
 class DoctorRedTest {
 
@@ -46,5 +48,24 @@ class DoctorRedTest {
 		assertNotNull(item);
 	}
 	
+	   @Test
+	   void 점수얻기_테스트() {
+	      //닥터 생성
+		  Doctor doctor = new DoctorRed(); 
+	        // 적 생성
+	      Enemy virus = new Virus();
+	       //적의 체력은 20
+	       assertEquals(20, virus.hp());
+	       //의사가 총알을 발사
+	       DoctorShot shot = doctor.shot();
+	       //총알이 바이러스를 때림
+	       shot.attackEnemy(virus);
+	       //총알이 바이러스를 때림
+	       shot.attackEnemy(virus);
+	       //체력이 20인 바이러스가 공격을 2번 맞아서 0이 됨
+	       assertEquals(0, virus.hp());
+	       //바이러스가 죽어서 점수 10점을 줌
+	       assertEquals(10, doctor.Score());
+	   }
 
 }

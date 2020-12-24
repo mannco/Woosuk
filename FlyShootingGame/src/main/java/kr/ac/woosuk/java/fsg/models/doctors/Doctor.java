@@ -1,9 +1,9 @@
 package kr.ac.woosuk.java.fsg.models.doctors;
 
+import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;
+import kr.ac.woosuk.java.fsg.models.doctorshots.Syringe;
 import kr.ac.woosuk.java.fsg.models.items.Item;
 import kr.ac.woosuk.java.fsg.models.items.PowerUp;
-import kr.ac.woosuk.java.fsg.models.shots.DoctorShot;
-import kr.ac.woosuk.java.fsg.models.shots.Syringe;
 
 public abstract class Doctor {
 	protected int score;
@@ -40,6 +40,11 @@ public abstract class Doctor {
 		if(item instanceof PowerUp) {
 			this.powerlevel++;
 		}
+	}
+
+	public int Score() {
+		// TODO Auto-generated method stub
+		return score += 5;
 	}
 
 

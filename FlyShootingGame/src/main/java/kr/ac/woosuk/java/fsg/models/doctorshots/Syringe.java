@@ -1,4 +1,4 @@
-package kr.ac.woosuk.java.fsg.models.shots;
+package kr.ac.woosuk.java.fsg.models.doctorshots;
 
 public class Syringe extends DoctorShot {
 	public Syringe() {

@@ -88,7 +88,7 @@ class DoctorRedTest {
 		   //위로
 		   doctor.moveUp();
 		   //테스트
-		   assertEquals(1, doctor.gety());
+		   assertEquals(-1, doctor.gety());
 		   
 		   //아래로
 		   doctor.moveDown();

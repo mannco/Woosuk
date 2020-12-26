@@ -61,12 +61,12 @@ public abstract class Doctor {
 	
 	public int moveUp() {
 		// TODO Auto-generated method stub
-		return y += 1;
+		return y -= 1;
 	}
 
 	public int moveDown() {
 		// TODO Auto-generated method stub
-		return y -= 1;
+		return y += 1;
 	}
 
 	public int getx() {

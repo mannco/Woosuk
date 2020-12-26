@@ -70,6 +70,30 @@ class DoctorRedTest {
 	   
 	   @Test 
 	   void 닥터움직임_테스트() {
+		   //사전조건
+		   //닥터 생성
+		   Doctor doctor = new DoctorRed();
+		   
+		   //행위
+		   //오른쪽
+		   doctor.moveRight();
+		   //테스트
+		   assertEquals(1, doctor.getx());
+		   
+		   //왼쪽
+		   doctor.moveleft();
+		   //테스트
+		   assertEquals(0, doctor.getx());
+		   
+		   //위로
+		   doctor.moveUp();
+		   //테스트
+		   assertEquals(1, doctor.gety());
+		   
+		   //아래로
+		   doctor.moveDown();
+		   //테스트
+		   assertEquals(0, doctor.gety());
 		   
 	   }
 	   

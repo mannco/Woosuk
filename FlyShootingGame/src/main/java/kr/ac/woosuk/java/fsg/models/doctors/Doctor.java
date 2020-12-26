@@ -8,6 +8,8 @@ import kr.ac.woosuk.java.fsg.models.items.PowerUp;
 public abstract class Doctor {
 	protected int score;
 	protected int powerlevel = 1;
+	protected int x;
+	protected int y;
 	
 	public DoctorShot inject() {
 		// TODO Auto-generated method stub
@@ -47,6 +49,34 @@ public abstract class Doctor {
 		return score += 5;
 	}
 
+	public int moveRight() {
+		// TODO Auto-generated method stub
+		return x += 1;
+	}
 
+	public int moveleft() {
+		// TODO Auto-generated method stub
+		return x -= 1;
+	}
+	
+	public int moveUp() {
+		// TODO Auto-generated method stub
+		return y += 1;
+	}
+
+	public int moveDown() {
+		// TODO Auto-generated method stub
+		return y -= 1;
+	}
+
+	public int getx() {
+		// TODO Auto-generated method stub
+		return x;
+	}
+
+	public int gety() {
+		// TODO Auto-generated method stub
+		return y;
+	}
 
 }

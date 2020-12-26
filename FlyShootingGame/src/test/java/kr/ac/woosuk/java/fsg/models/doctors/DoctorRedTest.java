@@ -70,7 +70,7 @@ class DoctorRedTest {
 	   }
 	   
 	   @Test 
-	   void 닥터움직임_테스트() {
+	   void 닥터움직임_테스트() { 
 		   //사전조건
 		   //닥터 생성
 		   Doctor doctor = new DoctorRed();
@@ -99,9 +99,22 @@ class DoctorRedTest {
 	   }
 	   
 	   @Test
-	   void 닥터다이_테스트() {
+	   void 닥터lLife감소소멸_테스트() {
+		   //사전조건
+		   //닥터생성
+		   Doctor doctor = new DoctorRed();
 		   
+		   //행위 
+		   //닥터 life 감소 , life가 0이면 소멸
+		   doctor.lifeDecrease();
+		   doctor.lifeDecrease();
+		   doctor.lifeDecrease();
+		  
+		   //테스트
+		   assertNull(doctor);
 	   }
+	   //수정해야함
+	   
 	   
 	   @Test
 	   void 폭탄사용_테스트() {

@@ -12,6 +12,7 @@ public abstract class Doctor {
 	protected int x;
 	protected int y;
 	protected int Bomb = 3;
+	protected int life = 3;
 	
 	public DoctorShot inject() {
 		
@@ -81,7 +82,7 @@ public abstract class Doctor {
 	}
 
 	public DoctorShot useBomb() {
-		if(Bomb >0) {
+		if(this.Bomb >0) {
 			this.Bomb -= 1;
 			return new AlcoholBomb();
 		} else {
@@ -95,4 +96,10 @@ public abstract class Doctor {
 		return Bomb;
 	}
 
+	public void lifeDecrease() {
+		// TODO Auto-generated method stub
+		if(this.life > 0) {
+				this.life -= 1;
+		}	
+	}
 }

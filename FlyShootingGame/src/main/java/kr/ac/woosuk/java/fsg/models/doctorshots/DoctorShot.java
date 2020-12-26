@@ -14,7 +14,6 @@ public abstract class DoctorShot {
    }
 
    public int getAttackpoint() {
-      
       return attackpoint;
    }
 

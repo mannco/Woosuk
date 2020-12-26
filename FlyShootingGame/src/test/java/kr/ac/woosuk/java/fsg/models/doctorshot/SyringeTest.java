@@ -35,7 +35,7 @@ class SyringeTest {
 	
 	@Test
 	void 주사공격력증가_테스트() {
-			//사전 조건
+		//사전 조건
 		//주사기가 발사됨
 		Doctor doctor = new DoctorRed();
 		//파워업 아이템이 생성됨

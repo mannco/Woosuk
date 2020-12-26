@@ -15,7 +15,7 @@ import kr.ac.woosuk.java.fsg.models.items.ThumbsUp;
 class DoctorRedTest {
 
 	@Test
-	void 인스턴스생성_테스트() {
+	void 닥터생성_테스트() {
 		Doctor doctor = new DoctorRed();
 		assertNotNull(doctor);
 	}
@@ -67,5 +67,19 @@ class DoctorRedTest {
 	       //바이러스가 죽어서 점수 10점을 줌
 	       assertEquals(10, doctor.Score());
 	   }
-
+	   
+	   @Test 
+	   void 닥터움직임_테스트() {
+		   
+	   }
+	   
+	   @Test
+	   void 닥터다이_테스트() {
+		   
+	   }
+	   
+	   @Test
+	   void 폭탄사용_테스트() {
+		   
+	   }
 }

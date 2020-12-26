@@ -16,6 +16,11 @@ class VirusTest {
 		Enemy enemy = new Virus();
 		assertNotNull(enemy);
 	}
+	
+	@Test
+	void 바이러스움직임_테스트() {
+		
+	}
 
 	@Test
 	void 총알발사_테스트() {
@@ -27,8 +32,16 @@ class VirusTest {
 	}
 	
 	@Test
-	void 아이템생성_테스트() {
-		Enemy enemy = new Virus();
+	void 바이러스소멸_테스트 () {
 		
 	}
+	
+	@Test
+	void 아이템드롭_테스트() {
+		Enemy enemy = new Virus();
+	}
+	
+	
+	
+	
 }

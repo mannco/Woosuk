@@ -49,24 +49,23 @@ public abstract class Doctor {
 		return score += 5;
 	}
 
-	public int moveRight() {
-		// TODO Auto-generated method stub
-		return x += 1;
+	public void moveRight() {
+		this.x += 1;
 	}
 
-	public int moveleft() {
+	public void moveleft() {
 		// TODO Auto-generated method stub
-		return x -= 1;
+		this.x -= 1;
 	}
 	
-	public int moveUp() {
+	public void moveUp() {
 		// TODO Auto-generated method stub
-		return y -= 1;
+		this.y -= 1;
 	}
 
-	public int moveDown() {
+	public void moveDown() {
 		// TODO Auto-generated method stub
-		return y += 1;
+		this.y += 1;
 	}
 
 	public int getx() {

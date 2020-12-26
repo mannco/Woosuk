@@ -19,7 +19,19 @@ class VirusTest {
 	
 	@Test
 	void 바이러스움직임_테스트() {
+		Enemy enemy = new Virus();	//바이러스 생성
 		
+		enemy.moveright();	//바이러스 오른쪽으로 움직임
+		assertEquals(1, enemy.getx());
+		
+		enemy.moveleft();	//바이러스 왼쪽으로 움직임
+		assertEquals(0, enemy.getx());
+		
+		enemy.moveup();		//바이러스 위쪽으로 움직임
+		assertEquals(-1, enemy.gety());
+		
+		enemy.movedown();	//바이러스 아래쪽으로 움직임
+		assertEquals(0, enemy.gety());
 	}
 
 	@Test
@@ -40,8 +52,5 @@ class VirusTest {
 	void 아이템드롭_테스트() {
 		Enemy enemy = new Virus();
 	}
-	
-	
-	
 	
 }

@@ -1,9 +1,7 @@
 package kr.ac.woosuk.java.fsg.models.doctorshot;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
-
 import kr.ac.woosuk.java.fsg.models.doctors.Doctor;
 import kr.ac.woosuk.java.fsg.models.doctors.DoctorRed;
 import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;

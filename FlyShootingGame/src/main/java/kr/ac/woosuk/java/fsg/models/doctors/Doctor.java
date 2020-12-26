@@ -102,4 +102,12 @@ public abstract class Doctor {
 				this.life -= 1;
 		}	
 	}
+
+	public int getLifepoint() {
+		return life;
+	}
+
+	public void attack(int attackpoint) {
+		this.life -= attackpoint;
+	}
 }

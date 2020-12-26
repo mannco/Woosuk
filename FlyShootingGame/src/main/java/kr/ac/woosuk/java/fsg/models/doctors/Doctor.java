@@ -1,5 +1,6 @@
 package kr.ac.woosuk.java.fsg.models.doctors;
 
+import kr.ac.woosuk.java.fsg.models.doctorshots.AlcoholBomb;
 import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;
 import kr.ac.woosuk.java.fsg.models.doctorshots.Syringe;
 import kr.ac.woosuk.java.fsg.models.items.Item;
@@ -10,9 +11,10 @@ public abstract class Doctor {
 	protected int powerlevel = 1;
 	protected int x;
 	protected int y;
+	protected int Bomb = 3;
 	
 	public DoctorShot inject() {
-		// TODO Auto-generated method stub
+		
 		return new Syringe();
 	}
 
@@ -76,6 +78,21 @@ public abstract class Doctor {
 	public int gety() {
 		// TODO Auto-generated method stub
 		return y;
+	}
+
+	public DoctorShot useBomb() {
+		if(Bomb >0) {
+			this.Bomb -= 1;
+			return new AlcoholBomb();
+		} else {
+			return null;
+		}
+		
+	}
+
+	public int getBombScore() {
+		
+		return Bomb;
 	}
 
 }

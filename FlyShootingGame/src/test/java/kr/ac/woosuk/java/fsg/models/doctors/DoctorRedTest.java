@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import kr.ac.woosuk.java.fsg.models.doctorshots.AlcoholBomb;
 import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;
 import kr.ac.woosuk.java.fsg.models.doctorshots.Syringe;
 import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
@@ -104,6 +105,18 @@ class DoctorRedTest {
 	   
 	   @Test
 	   void ÆøÅº»ç¿ë_Å×½ºÆ®() {
+		   //´ÚÅÍ »ý¼º
+		   Doctor doctor = new DoctorRed();
+		   //ÆøÅº ¹ß»ç
+		   DoctorShot shot = doctor.useBomb();
+		   assertNotNull(shot);
 		   
+		   assertTrue(shot instanceof AlcoholBomb);
+		   assertEquals(2, doctor.getBombScore());
+		   shot = doctor.useBomb();
+		   shot = doctor.useBomb();
+		   shot = doctor.useBomb();
+		   assertNull(shot);
 	   }
+	   
 }

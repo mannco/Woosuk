@@ -25,15 +25,17 @@ class AlcoholBombTest {
 	void 공격테스트() {
 		Doctor doctor = new DoctorRed();	//의사 생성
 		
-		DoctorShot doctorShot = new AlcoholBomb();	//폭탄 생성
-		assertEquals(999, doctorShot.getAttackpoint());	//폭탄 공격력 확인
+		DoctorShot bomb = new AlcoholBomb();	//폭탄 생성
+		assertEquals(999, bomb.getAttackpoint());	//폭탄 공격력 확인
 		
-		Enemy enemy = new Virus();	//적 생성
-		assertEquals(20, enemy.getHppoint());	//적 체력 확인
+		//적 생성
+		Enemy enemy = new Virus();
 		
-		doctorShot.attackEnemies(enemy);	//의사 적 공격
-		
-		assertEquals(-979, enemy.getHppoint());
+		//적의 체력은 20
+		assertEquals(20, enemy.hp(	));
+		//폭탄이 적을 때림
+		bomb.attackAllEnemy(enemy);
+		//체력이 20인 적이 공격을 맞아서 -979가 됨
+		assertEquals(-979, enemy.hp());
 	}
-
 }

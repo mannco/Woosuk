@@ -108,7 +108,7 @@ class DoctorRedTest {
 		   doctor.lifeDecrease();
 		   doctor.lifeDecrease();
 		   doctor.lifeDecrease();
-		  
+		   
 		   //Å×½ºÆ®
 		   assertNull(doctor);
 	   }

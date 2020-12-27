@@ -6,6 +6,7 @@ public abstract class DoctorShot {
    protected int attackpoint;
    protected int position;
    protected int Y;
+   protected int bombAttackPoint;
 
 
    
@@ -21,7 +22,6 @@ public abstract class DoctorShot {
 		this.attackpoint += powerlevel;
 	}
 	
-	
 	public void attackEnemy(Enemy virus) {
 		virus.attack(this.attackpoint);
 	}
@@ -34,7 +34,8 @@ public abstract class DoctorShot {
 		return Y;
 	}
 
-	public void attackEnemies(Enemy enemy) {
-		enemy.attack(attackpoint);
+	public void attackAllEnemy(Enemy enemy) {
+		enemy.attack(this.attackpoint);
 	}
+
 }

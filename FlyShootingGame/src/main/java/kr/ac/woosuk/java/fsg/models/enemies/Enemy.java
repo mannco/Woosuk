@@ -45,6 +45,10 @@ public abstract class Enemy {
 		return y;
 	}
 
+	public int getHppoint() {
+		return hppoint;
+	}
+
 
 	
 	

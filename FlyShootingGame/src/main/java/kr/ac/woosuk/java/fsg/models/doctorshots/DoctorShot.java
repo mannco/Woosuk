@@ -33,4 +33,8 @@ public abstract class DoctorShot {
 	public int getY() {
 		return Y;
 	}
+
+	public void attackEnemies(Enemy enemy) {
+		enemy.attack(attackpoint);
+	}
 }

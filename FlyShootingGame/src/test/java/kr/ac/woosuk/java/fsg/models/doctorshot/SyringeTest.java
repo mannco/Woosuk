@@ -65,6 +65,6 @@ class SyringeTest {
        
        //테스트
        //주사기는 10만큼 움직일 수 있음
-       assertEquals(10, shot.moveableDistance());
+       assertEquals(-10, shot.getY());
     }
 }

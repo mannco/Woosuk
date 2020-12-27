@@ -70,7 +70,7 @@ class DoctorRedTest {
 	   }
 	   
 	   @Test 
-	   void 닥터움직임_테스트() { 
+	   void 닥터움직임_테스트() {
 		   //사전조건
 		   //닥터 생성
 		   Doctor doctor = new DoctorRed();
@@ -95,7 +95,6 @@ class DoctorRedTest {
 		   doctor.moveDown();
 		   //테스트
 		   assertEquals(0, doctor.gety());
-		   
 	   }
 	   
 	   @Test
@@ -131,5 +130,4 @@ class DoctorRedTest {
 		   shot = doctor.useBomb();
 		   assertNull(shot);
 	   }
-	   
 }

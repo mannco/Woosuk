@@ -5,7 +5,7 @@ import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 public abstract class DoctorShot {
    protected int attackpoint;
    protected int position;
-   protected int movedDistance;
+   protected int Y;
 
 
    
@@ -27,10 +27,10 @@ public abstract class DoctorShot {
 	}
 	
 	public void Moveup() {
-		this.movedDistance = 10;      
+		this.Y = -10;   
 	}
 		   
-	public int moveableDistance() {
-		return movedDistance;
+	public int getY() {
+		return Y;
 	}
 }

@@ -2,6 +2,8 @@ package kr.ac.woosuk.java.fsg.models.doctorshot;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.Test;
 
 import kr.ac.woosuk.java.fsg.models.doctors.Doctor;
@@ -30,12 +32,18 @@ class AlcoholBombTest {
 		
 		//적 생성
 		Enemy enemy = new Virus();
+		Enemy enemy2 = new Virus();
+		ArrayList<Enemy> list = new ArrayList<Enemy>();
+		list.add(enemy);
+		list.add(enemy2);
 		
 		//적의 체력은 20
-		assertEquals(20, enemy.hp(	));
+		assertEquals(20, enemy.hp());
+		assertEquals(20, enemy2.hp());
 		//폭탄이 적을 때림
-		bomb.attackAllEnemy(enemy);
+		bomb.attackAllEnemy(list);
 		//체력이 20인 적이 공격을 맞아서 -979가 됨
 		assertEquals(-979, enemy.hp());
+		assertEquals(-979, enemy2.hp());
 	}
 }

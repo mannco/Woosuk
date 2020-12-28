@@ -48,5 +48,8 @@ public abstract class Enemy {
 	public int getHppoint() {
 		return hppoint;
 	}
+	public void setHppoint(int hppoint) {
+		this.hppoint -= hppoint;
+	}
 }
 

@@ -1,5 +1,7 @@
 package kr.ac.woosuk.java.fsg.models.doctorshots;
 
+import java.util.ArrayList;
+
 import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 
 public abstract class DoctorShot {
@@ -37,5 +39,11 @@ public abstract class DoctorShot {
 	public void attackAllEnemy(Enemy enemy) {
 		enemy.attack(this.attackpoint);
 	}
-
+	
+	public void attackAllEnemy(ArrayList<Enemy> list) {
+		// TODO Auto-generated method stub
+		for (Enemy enemy : list) {
+			enemy.setHppoint(this.attackpoint);
+		}
+	}
 }

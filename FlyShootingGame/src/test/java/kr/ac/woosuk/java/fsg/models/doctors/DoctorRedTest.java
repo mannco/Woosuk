@@ -36,9 +36,9 @@ class DoctorRedTest {
 	void 아이템먹기_테스트() {
 		Doctor doctor = new DoctorRed();
 		Item item = new ThumbsUp();
-		doctor.getItem(item);
+		doctor.getThumbsUp(item);
 		assertEquals(10, doctor.getScore());
-		doctor.getItem(item);
+		doctor.getThumbsUp(item);
 		assertEquals(20, doctor.getScore());
 	}
 	

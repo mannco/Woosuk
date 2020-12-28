@@ -19,12 +19,12 @@ public abstract class Doctor {
 		return new Syringe();
 	}
 
-	public void getItem(Item item) {
-		
+	public void getThumbsUp(Item item) {
+		this.score += 10;
 	}
 
 	public int getScore() {
-		return score += 10;
+		return score;
 	}
 
 	public int getPowerLevel() {

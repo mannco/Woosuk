@@ -88,7 +88,6 @@ public abstract class Doctor {
 		} else {
 			return null;
 		}
-		
 	}
 
 	public int getBombScore() {
@@ -109,5 +108,10 @@ public abstract class Doctor {
 
 	public void attack(int attackpoint) {
 		this.life -= attackpoint;
+	}
+
+	public int getPower() {
+		// TODO Auto-generated method stub
+		return powerlevel;
 	}
 }

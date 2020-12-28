@@ -21,7 +21,6 @@ class DoctorRedTest {
 		assertNotNull(doctor);
 	}
 	
-	
 	@Test
 	void 총알발사_테스트() {
 		Doctor doctor = new DoctorRed();
@@ -43,10 +42,18 @@ class DoctorRedTest {
 	
 	@Test
 	void 파워업줍기_테스트() {
+		//닥터 생성
 		Doctor doctor = new DoctorRed();
+		//파워업 아이템 생성
 		Item item = new PowerUp();
+		//닥터가 파워업 아이템을 먹는다
 		doctor.getPowerUp(item);
+		
+		//테스트
+		//닥터가 아이템 먹었는지 확인
 		assertNotNull(item);
+		//닥터의 파워가 상승했는지 확인
+		assertEquals(2, doctor.getPower());
 	}
 	
 	   @Test
@@ -129,5 +136,6 @@ class DoctorRedTest {
 		   shot = doctor.useBomb();
 		   shot = doctor.useBomb();
 		   assertNull(shot);
+		   
 	   }
 }

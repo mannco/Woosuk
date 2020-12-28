@@ -106,4 +106,14 @@ public abstract class Doctor {
 	public int getLife() {
 		return life;
 	}
+
+	public void getLifeUp(Item item) {
+		// TODO Auto-generated method stub
+		this.life += 1;
+	}
+
+	public void getBombUp(Item item) {
+		// TODO Auto-generated method stub
+		this.Bomb += 1;
+	}
 }

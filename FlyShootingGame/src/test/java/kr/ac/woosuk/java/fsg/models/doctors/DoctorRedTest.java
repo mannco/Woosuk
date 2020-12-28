@@ -11,7 +11,9 @@ import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 import kr.ac.woosuk.java.fsg.models.enemies.Vacteria;
 import kr.ac.woosuk.java.fsg.models.enemies.Virus;
 import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
+import kr.ac.woosuk.java.fsg.models.items.AlcoholBombUp;
 import kr.ac.woosuk.java.fsg.models.items.Item;
+import kr.ac.woosuk.java.fsg.models.items.LifeUp;
 import kr.ac.woosuk.java.fsg.models.items.PowerUp;
 import kr.ac.woosuk.java.fsg.models.items.ThumbsUp;
 
@@ -33,13 +35,36 @@ class DoctorRedTest {
 	}
 	
 	@Test
-	void ¾ÆÀÌÅÛ¸Ô±â_Å×½ºÆ®() {
+	void ¾öÁöÃ´¸Ô±â_Å×½ºÆ®() {
 		Doctor doctor = new DoctorRed();
 		Item item = new ThumbsUp();
+		assertEquals(0, doctor.getScore());
 		doctor.getThumbsUp(item);
 		assertEquals(10, doctor.getScore());
 		doctor.getThumbsUp(item);
 		assertEquals(20, doctor.getScore());
+	}
+	
+	@Test
+	void ¶óÀÌÇÁ¾÷¸Ô±â_Å×½ºÆ®() {
+		Doctor doctor = new DoctorRed();
+		Item item = new LifeUp();
+		assertEquals(3, doctor.getLife());
+		doctor.getLifeUp(item);
+		assertEquals(4, doctor.getLife());
+		doctor.getLifeUp(item);
+		assertEquals(5, doctor.getLife());
+	}
+	
+	@Test
+	void ÆøÅº¸Ô±â_Å×½ºÆ®() {
+		Doctor doctor = new DoctorRed();
+		Item item = new AlcoholBombUp();
+		assertEquals(3, doctor.getBombScore());
+		doctor.getBombUp(item);
+		assertEquals(4, doctor.getBombScore());
+		doctor.getBombUp(item);
+		assertEquals(5, doctor.getBombScore());
 	}
 	
 	@Test

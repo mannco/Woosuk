@@ -21,5 +21,9 @@ public abstract class EnemyShot {
 	public int getY() {
 		return y;
 	}
+	
+	public int attack() {
+		return attackpoint;
+	}
 
 }

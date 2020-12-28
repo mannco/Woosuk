@@ -38,7 +38,7 @@ class VirusTest {
 	void 총알발사_테스트() {
 		Enemy enemy = new Virus();
 		
-		EnemyShot shot = enemy.dispense();
+		EnemyShot shot = enemy.attack();
 		assertNotNull(shot);
 		assertTrue(shot instanceof VirusShot);
 	}
@@ -51,6 +51,7 @@ class VirusTest {
 	@Test
 	void 아이템드롭_테스트() {
 		Enemy enemy = new Virus();
+		
 	}
 	
 }

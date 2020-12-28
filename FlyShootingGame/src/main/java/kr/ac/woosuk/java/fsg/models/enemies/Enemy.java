@@ -17,7 +17,7 @@ public abstract class Enemy {
 		this.hppoint -= attackpoint;
 	}
 
-	public EnemyShot dispense() {
+	public EnemyShot attack() {
 		return new VirusShot();
 	}
 

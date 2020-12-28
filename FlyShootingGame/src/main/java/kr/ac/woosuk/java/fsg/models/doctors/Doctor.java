@@ -20,22 +20,18 @@ public abstract class Doctor {
 	}
 
 	public void getItem(Item item) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	public int getScore() {
-		// TODO Auto-generated method stub
 		return score += 10;
 	}
 
 	public int getPowerLevel() {
-		// TODO Auto-generated method stub
 		return powerlevel += 1;
 	}
 
 	public DoctorShot shot() {
-		// TODO Auto-generated method stub
 		DoctorShot shot = new Syringe();
 		shot.addPower(this.powerlevel-1);
 		return shot;
@@ -48,7 +44,6 @@ public abstract class Doctor {
 	}
 
 	public int Score() {
-		// TODO Auto-generated method stub
 		return score += 5;
 	}
 
@@ -57,27 +52,22 @@ public abstract class Doctor {
 	}
 
 	public void moveleft() {
-		// TODO Auto-generated method stub
 		this.x -= 1;
 	}
 	
 	public void moveUp() {
-		// TODO Auto-generated method stub
 		this.y -= 1;
 	}
 
 	public void moveDown() {
-		// TODO Auto-generated method stub
 		this.y += 1;
 	}
 
 	public int getx() {
-		// TODO Auto-generated method stub
 		return x;
 	}
 
 	public int gety() {
-		// TODO Auto-generated method stub
 		return y;
 	}
 
@@ -96,7 +86,6 @@ public abstract class Doctor {
 	}
 
 	public void lifeDecrease() {
-		// TODO Auto-generated method stub
 		if(this.life > 0) {
 				this.life -= 1;
 		}	
@@ -111,7 +100,10 @@ public abstract class Doctor {
 	}
 
 	public int getPower() {
-		// TODO Auto-generated method stub
 		return powerlevel;
+	}
+
+	public int getLife() {
+		return life;
 	}
 }

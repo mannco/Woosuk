@@ -129,13 +129,15 @@ class DoctorRedTest {
 		   //폭탄 발사
 		   DoctorShot shot = doctor.useBomb();
 		   assertNotNull(shot);
-		   
+		   //shot이 알콜폭탄인지 확인테스트
 		   assertTrue(shot instanceof AlcoholBomb);
+		   //폭탄 갯수 확인 테스트
 		   assertEquals(2, doctor.getBombScore());
 		   shot = doctor.useBomb();
+		   assertEquals(1, doctor.getBombScore());
 		   shot = doctor.useBomb();
+		   assertEquals(0, doctor.getBombScore());
 		   shot = doctor.useBomb();
 		   assertNull(shot);
-		   
 	   }
 }

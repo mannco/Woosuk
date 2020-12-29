@@ -6,15 +6,15 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import kr.ac.woosuk.java.fsg.controllers.GameController;
+import kr.ac.woosuk.java.fsg.controllers.Controller;
 
 public class GameView extends JPanel{
 	private JLabel scoreBoard;
 	private JPanel lifeBoard;
 	
-	private GameController gameController;
+	private Controller gameController;
 	
-	public GameController getGameController() {
+	public Controller getGameController() {
 		return gameController;
 	}
 	

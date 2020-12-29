@@ -124,7 +124,6 @@ class DoctorRedTest {
 		   //바이러스샷을 닥터가 맞음
 		   EnemyShot shot = enemy.attack();
 		   
-		   
 		   //닥터 life 감소 테스트
 		   shot.AttackDoctor(doctor);
 		   assertEquals(2, doctor.getLife());

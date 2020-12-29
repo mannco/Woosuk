@@ -1,5 +1,7 @@
 package kr.ac.woosuk.java.fsg.models.doctors;
 
-public class DoctorRed extends Doctor {
+import kr.ac.woosuk.java.fsg.controllers.Controller;
 
+public class DoctorRed extends Doctor {
+	
 }

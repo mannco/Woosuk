@@ -53,7 +53,8 @@ class ControllerTest {
 
         controller.removeEnemy(enemy);
 
-        assertNull(controller.getEnemies());
+        assertEquals(0, controller.getEnemies().size());
 
     }
+    
 }

@@ -8,7 +8,7 @@ import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 
 public class Controller {
     private Doctor doctors;
-    private List<Enemy> enemies;
+    private List<Enemy> enemies = new ArrayList<Enemy>();
 
     public void setDoctors(Doctor doctors) {
         this.doctors = doctors;
@@ -22,8 +22,6 @@ public class Controller {
         this.enemies = enemies;
     }
 
-
-
     public void addDoctor(Doctor doctor) {
         // TODO Auto-generated method stub
         this.doctors = doctor;
@@ -31,7 +29,7 @@ public class Controller {
 
     public void addEnemy(Enemy enemy) {
         // TODO Auto-generated method stub
-        this.enemies = new ArrayList<Enemy>();
+        this.enemies.add(enemy);
     }
 
     public void removeDoctor() {

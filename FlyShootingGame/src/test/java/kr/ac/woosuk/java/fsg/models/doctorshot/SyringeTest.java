@@ -1,6 +1,10 @@
 package kr.ac.woosuk.java.fsg.models.doctorshot;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import kr.ac.woosuk.java.fsg.models.doctors.Doctor;
 import kr.ac.woosuk.java.fsg.models.doctors.DoctorRed;
@@ -67,4 +71,13 @@ class SyringeTest {
        //주사기는 10만큼 움직일 수 있음
        assertEquals(-10, shot.getY());
     }
+	
+	@Test
+	void 적찾기_테스트() {
+		Doctor doctor = new DoctorRed();
+		DoctorShot shot = doctor.shot();
+		List<Enemy> enemies = new ArrayList<Enemy>();
+		
+		shot.search(enemies);
+	}
 }

@@ -1,6 +1,7 @@
 package kr.ac.woosuk.java.fsg.models.doctorshots;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 
@@ -9,7 +10,7 @@ public abstract class DoctorShot {
    protected int position;
    protected int Y;
    protected int bombAttackPoint;
-
+   protected int X;
 
    
    public int  ItemPosition() {
@@ -44,6 +45,15 @@ public abstract class DoctorShot {
 		// TODO Auto-generated method stub
 		for (Enemy enemy : list) {
 			enemy.setHppoint(this.attackpoint);
+		}
+	}
+
+	public void search(List<Enemy> enemies) {
+		for(Enemy enemy : enemies) {
+			if(this.X == enemy.getx() && this.Y ==enemy.gety()) {
+				this.attackEnemy(enemy);
+				break;
+			}
 		}
 	}
 }

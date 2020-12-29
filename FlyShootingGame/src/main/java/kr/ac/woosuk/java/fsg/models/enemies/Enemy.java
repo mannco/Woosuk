@@ -2,6 +2,7 @@ package kr.ac.woosuk.java.fsg.models.enemies;
 import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
 import kr.ac.woosuk.java.fsg.models.enemyshots.VirusShot;
 import kr.ac.woosuk.java.fsg.models.items.Item;
+import kr.ac.woosuk.java.fsg.models.items.ThumbsUp;
 
 
 public abstract class Enemy {
@@ -50,6 +51,11 @@ public abstract class Enemy {
 	}
 	public void setHppoint(int hppoint) {
 		this.hppoint -= hppoint;
+	}
+
+	public Item addItem() {
+		// TODO Auto-generated method stub
+		return new ThumbsUp();
 	}
 }
 

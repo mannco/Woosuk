@@ -31,10 +31,11 @@ class ControllerTest {
     void 애너미생성_테스트() {
         Controller controller = new Controller(gameview);
         Enemy enemy = new Virus();
+        controller.createEnemy();
+        assertEquals(3, controller.getEnemies().size());
         controller.addEnemy(enemy);
-
-        assertNotNull(controller.getEnemies());
-
+        assertEquals(4, controller.getEnemies().size());
+        
     }
     @Test
     void 닥터소멸_테스트() {
@@ -56,11 +57,9 @@ class ControllerTest {
         controller.addEnemy(enemy);
         
         assertNotNull(controller.getEnemies());
-        
+  
         controller.removeEnemy(enemy);
-        
         assertEquals(0, controller.getEnemies().size());
-        
     }
     
     @Test

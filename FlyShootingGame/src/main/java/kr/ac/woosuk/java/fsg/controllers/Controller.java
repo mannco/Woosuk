@@ -6,6 +6,7 @@ import java.util.List;
 import kr.ac.woosuk.java.fsg.models.doctors.Doctor;
 import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;
 import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
+import kr.ac.woosuk.java.fsg.models.enemies.Virus;
 import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
 import kr.ac.woosuk.java.fsg.models.items.Item;
 import kr.ac.woosuk.java.fsg.views.GameView;
@@ -80,6 +81,11 @@ public class Controller {
 
 	public void removeItem(Item item) {
 		this.items.remove(item);
+	}
+	public void createEnemy() {
+		this.enemies.add(new Virus());
+		this.enemies.add(new Virus());
+		this.enemies.add(new Virus());
 	}
 
 

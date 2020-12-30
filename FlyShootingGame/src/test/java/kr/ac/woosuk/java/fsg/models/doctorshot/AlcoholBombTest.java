@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
+import kr.ac.woosuk.java.fsg.controllers.Controller;
 import kr.ac.woosuk.java.fsg.models.doctors.Doctor;
 import kr.ac.woosuk.java.fsg.models.doctors.DoctorRed;
 import kr.ac.woosuk.java.fsg.models.doctorshots.AlcoholBomb;
@@ -13,8 +14,12 @@ import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;
 import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 import kr.ac.woosuk.java.fsg.models.enemies.Virus;
 import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
+import kr.ac.woosuk.java.fsg.views.GameView;
 
 class AlcoholBombTest {
+	
+	GameView gameView = new GameView();
+	Controller controller = new Controller(gameView);
 
 	@Test
 	void 움직임테스트() {
@@ -25,7 +30,7 @@ class AlcoholBombTest {
 	
 	@Test
 	void 공격테스트() {
-		Doctor doctor = new DoctorRed();	//의사 생성
+		Doctor doctor = new DoctorRed(controller);	//의사 생성
 		
 		DoctorShot bomb = new AlcoholBomb();	//폭탄 생성
 		assertEquals(999, bomb.getAttackpoint());	//폭탄 공격력 확인

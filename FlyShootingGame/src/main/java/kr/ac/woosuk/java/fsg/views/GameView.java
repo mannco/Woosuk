@@ -25,14 +25,14 @@ import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
 import kr.ac.woosuk.java.fsg.models.enemyshots.GermShot;
 import kr.ac.woosuk.java.fsg.models.enemyshots.VirusShot;
 
-public class GameView extends JPanel{
+public class GameView extends JPanel implements Runnable {
 	private JLabel scoreBoard;
 	private JPanel lifeBoard;
 	
-	private Controller gameController;
+	private Controller controller;
 	
 	public Controller getGameController() {
-		return gameController;
+		return controller;
 	}
 	
 	public GameView() {
@@ -48,15 +48,15 @@ public class GameView extends JPanel{
 		this.add(this.lifeBoard);
 		
 		//TEST Doctor
-		Doctor doctor = new DoctorRed();
+		Doctor doctor = new DoctorRed(controller);
 		this.add(doctor);
 		doctor.setLocation(50, 200);
 		
-		doctor = new DoctorBlue();
+		doctor = new DoctorBlue(controller);
 		this.add(doctor);
 		doctor.setLocation(50, 300);
 		
-		doctor = new DoctorGreen();
+		doctor = new DoctorGreen(controller);
 		this.add(doctor);
 		doctor.setLocation(50, 400);
 		
@@ -89,19 +89,21 @@ public class GameView extends JPanel{
 		//TEST EnemyShot
 		EnemyShot enemyshot = new VirusShot();
 		this.add(enemyshot);
-		enemy.setLocation(350, 200);
+		enemyshot.setLocation(350, 200);
 		
 		enemyshot = new BacteriaShot();
 		this.add(enemyshot);
-		enemy.setLocation(350, 300);
+		enemyshot.setLocation(350, 300);
 		
 		enemyshot = new BossShot();
 		this.add(enemyshot);
-		enemy.setLocation(350, 400);
+		enemyshot.setLocation(350, 400);
 		
 		enemyshot = new GermShot();
 		this.add(enemyshot);
-		enemy.setLocation(350, 500);
+		enemyshot.setLocation(350, 500);
+		
+		this.setFocusable(false);
 		
 	}
 	
@@ -116,4 +118,19 @@ public class GameView extends JPanel{
 	public JLabel getSunBoard() {
 		return this.scoreBoard;
 	}
+	
+	@Override
+	public void run() {
+		
+		while(true) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            this.repaint();
+        }
+			
+	}
+	
 }

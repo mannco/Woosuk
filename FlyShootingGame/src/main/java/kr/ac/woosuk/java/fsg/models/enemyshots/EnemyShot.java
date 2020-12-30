@@ -27,7 +27,7 @@ public abstract class EnemyShot extends JLabel {
 		this.y += 1;
 	}
 
-	public int getY() {
+	public int gety() {
 		return y;
 	}
 	

@@ -41,7 +41,7 @@ public abstract class DoctorShot extends JLabel {
 		this.y = -10;   
 	}
 		   
-	public int getY() {
+	public int gety() {
 		return y;
 	}
 

@@ -8,6 +8,10 @@ import kr.ac.woosuk.java.fsg.controllers.Controller;
 
 public class DoctorRed extends Doctor {
 	
+	public DoctorRed(Controller controller) {
+		super(controller);
+	}
+
 	@Override
 	protected void paintComponent(Graphics g) {
 		ImageIcon bgImg = new ImageIcon(this.getClass().getResource("/kr/ac/woosuk/java/fsg/images/imgdoctorred.png"));

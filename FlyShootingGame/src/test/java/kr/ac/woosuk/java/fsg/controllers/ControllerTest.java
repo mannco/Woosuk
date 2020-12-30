@@ -12,13 +12,16 @@ import kr.ac.woosuk.java.fsg.models.enemies.Virus;
 import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
 import kr.ac.woosuk.java.fsg.models.items.Item;
 import kr.ac.woosuk.java.fsg.models.items.ThumbsUp;
+import kr.ac.woosuk.java.fsg.views.GameView;
 
 class ControllerTest {
+	
+	GameView gameview = new GameView();
 
     @Test
     void 닥터생성_테스트() {
-        Controller controller = new Controller();
-        Doctor doctor = new DoctorRed();
+        Controller controller = new Controller(gameview);
+        Doctor doctor = new DoctorRed(controller);
         controller.addDoctor(doctor);
 
         assertNotNull(controller.getDoctors());
@@ -26,7 +29,7 @@ class ControllerTest {
 
     @Test
     void 애너미생성_테스트() {
-        Controller controller = new Controller();
+        Controller controller = new Controller(gameview);
         Enemy enemy = new Virus();
         controller.addEnemy(enemy);
 
@@ -35,8 +38,8 @@ class ControllerTest {
     }
     @Test
     void 닥터소멸_테스트() {
-        Controller controller = new Controller();
-        Doctor doctor = new DoctorRed();
+        Controller controller = new Controller(gameview);
+        Doctor doctor = new DoctorRed(controller);
         controller.addDoctor(doctor);
         assertNotNull(controller.getDoctors());
 
@@ -48,7 +51,7 @@ class ControllerTest {
 
     @Test
     void 적소멸_테스트() {
-        Controller controller = new Controller();
+        Controller controller = new Controller(gameview);
         Enemy enemy = new Virus();
         controller.addEnemy(enemy);
         
@@ -62,8 +65,8 @@ class ControllerTest {
     
     @Test
     void 닥터샷생성_테스트() {
-        Controller controller = new Controller();
-        Doctor doctor = new DoctorRed();
+        Controller controller = new Controller(gameview);
+        Doctor doctor = new DoctorRed(controller);
         DoctorShot shot = doctor.shot();
         controller.addDoctorShot(shot);
         
@@ -72,8 +75,8 @@ class ControllerTest {
     
     @Test
     void 닥터샷소멸_테스트() {
-        Controller controller = new Controller();
-        Doctor doctor = new DoctorRed();
+        Controller controller = new Controller(gameview);
+        Doctor doctor = new DoctorRed(controller);
         DoctorShot shot = doctor.shot();
         controller.addDoctorShot(shot);
         
@@ -86,7 +89,7 @@ class ControllerTest {
     
     @Test
     void 적샷생성_테스트() {
-        Controller controller = new Controller();
+        Controller controller = new Controller(gameview);
         Enemy enemy = new Virus();
         EnemyShot shot = enemy.attack();
         controller.addEnemyShot(shot);
@@ -96,7 +99,7 @@ class ControllerTest {
     
     @Test
     void 적샷소멸_테스트() {
-        Controller controller = new Controller();
+        Controller controller = new Controller(gameview);
         Enemy enemy = new Virus();
         EnemyShot shot = enemy.attack();
         controller.addEnemyShot(shot);
@@ -109,7 +112,7 @@ class ControllerTest {
     
     @Test
     void 아이템생성_테스트() {
-        Controller controller = new Controller();
+        Controller controller = new Controller(gameview);
         Enemy enemy = new Virus();
         Item item = enemy.addItem();
         controller.addItem(item);
@@ -119,7 +122,7 @@ class ControllerTest {
     
     @Test
     void 아이템소멸_테스트() {
-        Controller controller = new Controller();
+        Controller controller = new Controller(gameview);
         Enemy enemy = new Virus();
         Item item = enemy.addItem();
         controller.addItem(item);

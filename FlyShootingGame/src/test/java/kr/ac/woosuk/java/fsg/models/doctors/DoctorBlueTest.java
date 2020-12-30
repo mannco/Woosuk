@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import kr.ac.woosuk.java.fsg.controllers.Controller;
 import kr.ac.woosuk.java.fsg.models.doctorshots.AlcoholBomb;
 import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;
 import kr.ac.woosuk.java.fsg.models.doctorshots.Syringe;
@@ -15,18 +16,22 @@ import kr.ac.woosuk.java.fsg.models.items.Item;
 import kr.ac.woosuk.java.fsg.models.items.LifeUp;
 import kr.ac.woosuk.java.fsg.models.items.PowerUp;
 import kr.ac.woosuk.java.fsg.models.items.ThumbsUp;
+import kr.ac.woosuk.java.fsg.views.GameView;
 
 class DoctorBlueTest {
-
+	
+	GameView gameView = new GameView();
+	Controller controller = new Controller(gameView);
+		
 	@Test
 	void 닥터생성_테스트() {
-		Doctor doctor = new DoctorBlue();
+		Doctor doctor = new DoctorBlue(controller);
 		assertNotNull(doctor);
 	}
 	
 	@Test
 	void 총알발사_테스트() {
-		Doctor doctor = new DoctorBlue();
+		Doctor doctor = new DoctorBlue(controller);
 		
 		DoctorShot shot = doctor.inject();
 		assertNotNull(shot);
@@ -35,7 +40,7 @@ class DoctorBlueTest {
 	
 	@Test
 	void 엄지척먹기_테스트() {
-		Doctor doctor = new DoctorBlue();
+		Doctor doctor = new DoctorBlue(controller);
 		Item item = new ThumbsUp();
 		assertEquals(0, doctor.getScore());
 		doctor.getThumbsUp(item);
@@ -46,7 +51,7 @@ class DoctorBlueTest {
 	
 	@Test
 	void 라이프업먹기_테스트() {
-		Doctor doctor = new DoctorBlue();
+		Doctor doctor = new DoctorBlue(controller);
 		Item item = new LifeUp();
 		assertEquals(3, doctor.getLife());
 		doctor.getLifeUp(item);
@@ -57,7 +62,7 @@ class DoctorBlueTest {
 	
 	@Test
 	void 폭탄먹기_테스트() {
-		Doctor doctor = new DoctorBlue();
+		Doctor doctor = new DoctorBlue(controller);
 		Item item = new AlcoholBombUp();
 		assertEquals(3, doctor.getBombScore());
 		doctor.getBombUp(item);
@@ -70,7 +75,7 @@ class DoctorBlueTest {
 	void 파워업줍기_테스트() {
 		
 		//닥터 생성
-		Doctor doctor = new DoctorBlue();
+		Doctor doctor = new DoctorBlue(controller);
 		//파워업 아이템 생성
 		Item item = new PowerUp();
 		//닥터가 파워업 아이템을 먹는다
@@ -90,7 +95,7 @@ class DoctorBlueTest {
 	   void 닥터움직임_테스트() {
 		   //사전조건
 		   //닥터 생성
-		   Doctor doctor = new DoctorBlue();
+		   Doctor doctor = new DoctorBlue(controller);
 		   
 		   //행위
 		   //오른쪽
@@ -99,7 +104,7 @@ class DoctorBlueTest {
 		   assertEquals(1, doctor.getx());
 		   
 		   //왼쪽
-		   doctor.moveleft();
+		   doctor.moveLeft();
 		   //테스트
 		   assertEquals(0, doctor.getx());
 		   
@@ -117,7 +122,7 @@ class DoctorBlueTest {
 	   @Test
 	   void 닥터lLife감소_테스트() {
 		   //닥터생성
-		   Doctor doctor = new DoctorBlue();
+		   Doctor doctor = new DoctorBlue(controller);
 		   //적 생성
 		   Enemy enemy = new Virus();
 		   //바이러스샷을 닥터가 맞음
@@ -137,7 +142,7 @@ class DoctorBlueTest {
 	   @Test
 	   void 폭탄사용_테스트() {
 		   //닥터 생성
-		   Doctor doctor = new DoctorBlue();
+		   Doctor doctor = new DoctorBlue(controller);
 		   //폭탄 발사
 		   DoctorShot shot = doctor.useBomb();
 		   assertNotNull(shot);

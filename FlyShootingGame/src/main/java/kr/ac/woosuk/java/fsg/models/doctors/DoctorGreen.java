@@ -4,7 +4,13 @@ import java.awt.Graphics;
 
 import javax.swing.ImageIcon;
 
+import kr.ac.woosuk.java.fsg.controllers.Controller;
+
 public class DoctorGreen extends Doctor {
+	
+	public DoctorGreen(Controller controller) {
+		super(controller);
+	}
 	
 	@Override
 	protected void paintComponent(Graphics g) {

@@ -21,22 +21,18 @@ public class Controller {
     }
 
     public void addDoctor(Doctor doctor) {
-        // TODO Auto-generated method stub
         this.doctors = doctor;
     }
 
     public void addEnemy(Enemy enemy) {
-        // TODO Auto-generated method stub
         this.enemies.add(enemy);
     }
 
     public void removeDoctor() {
-        // TODO Auto-generated method stub
         this.doctors = null;
     }
 
     public Doctor getDoctors() {
-        // TODO Auto-generated method stub
         return doctors;
     }
 

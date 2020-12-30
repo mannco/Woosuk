@@ -10,9 +10,9 @@ import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 public abstract class DoctorShot extends JLabel {
    protected int attackpoint;
    protected int position;
-   protected int Y;
+   protected int y;
    protected int bombAttackPoint;
-   protected int X;
+   protected int x;
    
    public DoctorShot() {
 	   
@@ -38,11 +38,11 @@ public abstract class DoctorShot extends JLabel {
 	}
 	
 	public void Moveup() {
-		this.Y = -10;   
+		this.y = -10;   
 	}
 		   
 	public int getY() {
-		return Y;
+		return y;
 	}
 
 	public void attackAllEnemy(Enemy enemy) {
@@ -58,7 +58,7 @@ public abstract class DoctorShot extends JLabel {
 
 	public void search(List<Enemy> enemies) {
 		for(Enemy enemy : enemies) {
-			if(this.X == enemy.getx() && this.Y ==enemy.gety()) {
+			if(this.x == enemy.getx() && this.y ==enemy.gety()) {
 				this.attackEnemy(enemy);
 				break;
 			}

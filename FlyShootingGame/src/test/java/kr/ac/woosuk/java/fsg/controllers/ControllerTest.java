@@ -22,7 +22,6 @@ class ControllerTest {
         controller.addDoctor(doctor);
 
         assertNotNull(controller.getDoctors());
-
     }
 
     @Test
@@ -52,13 +51,13 @@ class ControllerTest {
         Controller controller = new Controller();
         Enemy enemy = new Virus();
         controller.addEnemy(enemy);
-
+        
         assertNotNull(controller.getEnemies());
-
+        
         controller.removeEnemy(enemy);
-
+        
         assertEquals(0, controller.getEnemies().size());
-
+        
     }
     
     @Test

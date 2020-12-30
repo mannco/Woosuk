@@ -7,6 +7,7 @@ import kr.ac.woosuk.java.fsg.models.doctors.Doctor;
 public abstract class EnemyShot extends JLabel {
 	protected int attackpoint = 1;
 	protected int y;
+	protected int x;
 	
 	public EnemyShot() {
 		

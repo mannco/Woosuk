@@ -8,7 +8,7 @@ import kr.ac.woosuk.java.fsg.models.doctorshots.AlcoholBomb;
 import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;
 import kr.ac.woosuk.java.fsg.models.doctorshots.Syringe;
 import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
-import kr.ac.woosuk.java.fsg.models.enemies.Vacteria;
+import kr.ac.woosuk.java.fsg.models.enemies.Bacteria;
 import kr.ac.woosuk.java.fsg.models.enemies.Virus;
 import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
 import kr.ac.woosuk.java.fsg.models.items.AlcoholBombUp;

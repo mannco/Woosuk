@@ -3,14 +3,22 @@ package kr.ac.woosuk.java.fsg.models.doctorshots;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JLabel;
+
 import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 
-public abstract class DoctorShot {
+public abstract class DoctorShot extends JLabel {
    protected int attackpoint;
    protected int position;
    protected int Y;
    protected int bombAttackPoint;
    protected int X;
+   
+   public DoctorShot() {
+	   
+	   this.setBounds(0, 0, 75, 75);
+	   
+   }
 
    
    public int  ItemPosition() {

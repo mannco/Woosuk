@@ -1,8 +1,21 @@
 package kr.ac.woosuk.java.fsg.models.enemies;
 
-public class Virus extends Enemy{
+import java.awt.Graphics;
 
-public Virus() {
-	this.hppoint = 20;
-}
+import javax.swing.ImageIcon;
+
+public class Virus extends Enemy{
+	
+	@Override
+	protected void paintComponent(Graphics g) {
+		ImageIcon bgImg = new ImageIcon(this.getClass().getResource("/kr/ac/woosuk/java/fsg/images/imgvirus.png"));
+		g.drawImage(bgImg.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
+		setOpaque(false);
+		super.paintComponent(g);
+	}
+
+	public Virus() {
+		this.hppoint = 20;
+	}
+	
 }

@@ -7,6 +7,23 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import kr.ac.woosuk.java.fsg.controllers.Controller;
+import kr.ac.woosuk.java.fsg.models.doctors.Doctor;
+import kr.ac.woosuk.java.fsg.models.doctors.DoctorBlue;
+import kr.ac.woosuk.java.fsg.models.doctors.DoctorGreen;
+import kr.ac.woosuk.java.fsg.models.doctors.DoctorRed;
+import kr.ac.woosuk.java.fsg.models.doctorshots.AlcoholBomb;
+import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;
+import kr.ac.woosuk.java.fsg.models.doctorshots.Syringe;
+import kr.ac.woosuk.java.fsg.models.enemies.Bacteria;
+import kr.ac.woosuk.java.fsg.models.enemies.Boss;
+import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
+import kr.ac.woosuk.java.fsg.models.enemies.Germ;
+import kr.ac.woosuk.java.fsg.models.enemies.Virus;
+import kr.ac.woosuk.java.fsg.models.enemyshots.BacteriaShot;
+import kr.ac.woosuk.java.fsg.models.enemyshots.BossShot;
+import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
+import kr.ac.woosuk.java.fsg.models.enemyshots.GermShot;
+import kr.ac.woosuk.java.fsg.models.enemyshots.VirusShot;
 
 public class GameView extends JPanel{
 	private JLabel scoreBoard;
@@ -29,6 +46,63 @@ public class GameView extends JPanel{
 		this.add(this.scoreBoard);
 		this.lifeBoard = new LifeBoard(this);
 		this.add(this.lifeBoard);
+		
+		//TEST Doctor
+		Doctor doctor = new DoctorRed();
+		this.add(doctor);
+		doctor.setLocation(50, 200);
+		
+		doctor = new DoctorBlue();
+		this.add(doctor);
+		doctor.setLocation(50, 300);
+		
+		doctor = new DoctorGreen();
+		this.add(doctor);
+		doctor.setLocation(50, 400);
+		
+		//TEST Enemy
+		Enemy enemy = new Virus();
+		this.add(enemy);
+		enemy.setLocation(150, 200);
+		
+		enemy = new Germ();
+		this.add(enemy);
+		enemy.setLocation(150, 300);
+		
+		enemy = new Boss();
+		this.add(enemy);
+		enemy.setLocation(150, 400);
+		
+		enemy = new Bacteria();
+		this.add(enemy);
+		enemy.setLocation(150, 500);
+		
+		//TEST DoctorShot
+		DoctorShot doctorshot = new AlcoholBomb();
+		this.add(doctorshot);
+		doctorshot.setLocation(250, 200);
+		
+		doctorshot = new Syringe();
+		this.add(doctorshot);
+		doctorshot.setLocation(250, 300);
+		
+		//TEST EnemyShot
+		EnemyShot enemyshot = new VirusShot();
+		this.add(enemyshot);
+		enemy.setLocation(350, 200);
+		
+		enemyshot = new BacteriaShot();
+		this.add(enemyshot);
+		enemy.setLocation(350, 300);
+		
+		enemyshot = new BossShot();
+		this.add(enemyshot);
+		enemy.setLocation(350, 400);
+		
+		enemyshot = new GermShot();
+		this.add(enemyshot);
+		enemy.setLocation(350, 500);
+		
 	}
 	
 	@Override

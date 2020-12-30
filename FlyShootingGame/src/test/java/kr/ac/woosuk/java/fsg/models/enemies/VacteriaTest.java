@@ -12,13 +12,13 @@ class VacteriaTest {
 
 	@Test
 	void 바이러스생성_테스트() {
-		Enemy enemy = new Vacteria();
+		Enemy enemy = new Bacteria();
 		assertNotNull(enemy);
 	}
 	
 	@Test
 	void 바이러스움직임_테스트() {
-		Enemy enemy = new Vacteria();	//바이러스 생성
+		Enemy enemy = new Bacteria();	//바이러스 생성
 		
 		enemy.moveright();	//바이러스 오른쪽으로 움직임
 		assertEquals(1, enemy.getx());
@@ -35,7 +35,7 @@ class VacteriaTest {
 
 	@Test
 	void 총알발사_테스트() {
-		Enemy enemy = new Vacteria();
+		Enemy enemy = new Bacteria();
 		
 		EnemyShot shot = enemy.attack();
 		assertNotNull(shot);
@@ -49,7 +49,7 @@ class VacteriaTest {
 	
 	@Test
 	void 아이템드롭_테스트() {
-		Enemy enemy = new Vacteria();
+		Enemy enemy = new Bacteria();
 		
 	}
 	

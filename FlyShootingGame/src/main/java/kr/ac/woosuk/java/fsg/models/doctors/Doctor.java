@@ -1,18 +1,26 @@
 package kr.ac.woosuk.java.fsg.models.doctors;
 
+import javax.swing.JLabel;
+
 import kr.ac.woosuk.java.fsg.models.doctorshots.AlcoholBomb;
 import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;
 import kr.ac.woosuk.java.fsg.models.doctorshots.Syringe;
 import kr.ac.woosuk.java.fsg.models.items.Item;
 import kr.ac.woosuk.java.fsg.models.items.PowerUp;
 
-public abstract class Doctor {
+public abstract class Doctor extends JLabel {
 	protected int score;
 	protected int powerlevel = 1;
 	protected int x;
 	protected int y;
 	protected int Bomb = 3;
 	protected int life = 3;
+	
+	public Doctor() {
+		
+		this.setBounds(0, 0, 75, 75);
+		
+	}
 	
 	public DoctorShot inject() {
 		

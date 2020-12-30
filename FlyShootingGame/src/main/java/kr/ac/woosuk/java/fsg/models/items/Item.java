@@ -1,6 +1,8 @@
 package kr.ac.woosuk.java.fsg.models.items;
 
-public abstract class Item {
+import javax.swing.JLabel;
+
+public abstract class Item extends JLabel {
 	protected int addPoint;
 	protected int x;
 	protected int y;

@@ -11,7 +11,7 @@ import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
 import kr.ac.woosuk.java.fsg.models.items.Item;
 import kr.ac.woosuk.java.fsg.views.GameView;
 
-public class Controller {
+public class Controller implements Runnable {
 	private Doctor doctors;
     private List<Enemy> enemies = new ArrayList<Enemy>();
     private List<DoctorShot> doctorshots = new ArrayList<DoctorShot>();
@@ -86,6 +86,12 @@ public class Controller {
 		this.enemies.add(new Virus());
 		this.enemies.add(new Virus());
 		this.enemies.add(new Virus());
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
 	}
 
 

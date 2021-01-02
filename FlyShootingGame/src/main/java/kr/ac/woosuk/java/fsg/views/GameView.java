@@ -37,6 +37,9 @@ public class GameView extends JPanel implements Runnable {
 	
 	public GameView() {
 		init();
+		this.controller = new Controller(this);
+		Thread thread = new Thread(this.controller);
+		thread.start();
 	}
 	
 	private void init() {

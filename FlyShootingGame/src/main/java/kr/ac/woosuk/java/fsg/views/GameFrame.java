@@ -24,6 +24,8 @@ public class GameFrame extends JFrame {
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GameView gameView = new GameView();
+		Thread thread = new Thread(gameView);
+		thread.start();
 		this.contentPane.add(gameView);
 	}
 }

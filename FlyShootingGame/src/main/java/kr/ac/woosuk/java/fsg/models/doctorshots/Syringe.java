@@ -4,6 +4,8 @@ import java.awt.Graphics;
 
 import javax.swing.ImageIcon;
 
+import kr.ac.woosuk.java.fsg.controllers.Controller;
+
 public class Syringe extends DoctorShot {
 	
 	@Override
@@ -14,7 +16,14 @@ public class Syringe extends DoctorShot {
 		super.paintComponent(g);
 	}
 	
-	public Syringe() {
+	public Syringe(Controller controller, int x, int y) {
+		super(controller,x,y);
 		this.attackpoint = 10;
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
 	}
 }

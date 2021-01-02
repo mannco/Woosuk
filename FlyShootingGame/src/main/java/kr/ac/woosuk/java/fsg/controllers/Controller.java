@@ -12,17 +12,23 @@ import kr.ac.woosuk.java.fsg.models.items.Item;
 import kr.ac.woosuk.java.fsg.views.GameView;
 
 public class Controller implements Runnable {
+
+
 	private Doctor doctors;
     private List<Enemy> enemies = new ArrayList<Enemy>();
-    private List<DoctorShot> doctorshots = new ArrayList<DoctorShot>();
+    private List<DoctorShot> doctorshots;
     private List<EnemyShot> enemyShots = new ArrayList<EnemyShot>();
     private List<Item> items = new ArrayList<Item>();
     private GameView gameView;
     
     public Controller(GameView gameview) {
     	this.gameView = gameview;
+    	this.doctorshots = new ArrayList<DoctorShot>();
 	}
     
+	public GameView getGameView() {
+		return gameView;
+	}
     public List<Enemy> getEnemies() {
         return enemies;
     }
@@ -49,6 +55,7 @@ public class Controller implements Runnable {
 
 	public void addDoctorShot(DoctorShot shot) {
 		this.doctorshots.add(shot);
+		this.getGameView().add(shot);
 	}
 
     public List<DoctorShot> getDoctorshots() {

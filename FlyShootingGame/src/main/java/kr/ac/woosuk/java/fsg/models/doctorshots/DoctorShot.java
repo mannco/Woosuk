@@ -5,18 +5,20 @@ import java.util.List;
 
 import javax.swing.JLabel;
 
+import kr.ac.woosuk.java.fsg.controllers.Controller;
 import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 
-public abstract class DoctorShot extends JLabel {
+public abstract class DoctorShot extends JLabel implements Runnable {
    protected int attackpoint;
    protected int position;
    protected int y;
    protected int bombAttackPoint;
    protected int x;
+   protected Controller controller;
    
-   public DoctorShot() {
-	   
-	   this.setBounds(0, 0, 75, 75);
+   public DoctorShot(Controller controller, int x, int y) {
+	   this.controller = controller;
+	   this.setBounds(x, y, 75, 75);
 	   
    }
 
@@ -63,4 +65,9 @@ public abstract class DoctorShot extends JLabel {
 			}
 		}
 	}
+	@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			
+		}
 }

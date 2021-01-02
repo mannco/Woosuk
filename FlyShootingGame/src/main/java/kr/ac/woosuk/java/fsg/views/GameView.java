@@ -55,13 +55,13 @@ public class GameView extends JPanel implements Runnable {
 		this.add(doctor);
 		doctor.setLocation(50, 200);
 		
-		doctor = new DoctorBlue(controller);
-		this.add(doctor);
-		doctor.setLocation(50, 300);
-		
-		doctor = new DoctorGreen(controller);
-		this.add(doctor);
-		doctor.setLocation(50, 400);
+//		doctor = new DoctorBlue(controller);
+//		this.add(doctor);
+//		doctor.setLocation(50, 300);
+//		
+//		doctor = new DoctorGreen(controller);
+//		this.add(doctor);
+//		doctor.setLocation(50, 400);
 		
 		//TEST Enemy
 		Enemy enemy = new Virus();
@@ -81,13 +81,13 @@ public class GameView extends JPanel implements Runnable {
 		enemy.setLocation(150, 500);
 		
 		//TEST DoctorShot
-		DoctorShot doctorshot = new AlcoholBomb();
-		this.add(doctorshot);
-		doctorshot.setLocation(250, 200);
-		
-		doctorshot = new Syringe();
-		this.add(doctorshot);
-		doctorshot.setLocation(250, 300);
+//		DoctorShot doctorshot = new AlcoholBomb();
+//		this.add(doctorshot);
+//		doctorshot.setLocation(250, 200);
+//		
+//		doctorshot = new Syringe();
+//		this.add(doctorshot);
+//		doctorshot.setLocation(250, 300);
 		
 		//TEST EnemyShot
 		EnemyShot enemyshot = new VirusShot();

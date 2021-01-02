@@ -6,6 +6,7 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.JLabel;
 
+
 import kr.ac.woosuk.java.fsg.controllers.Controller;
 import kr.ac.woosuk.java.fsg.models.doctorshots.AlcoholBomb;
 import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;
@@ -21,6 +22,7 @@ public abstract class Doctor extends JLabel implements Runnable {
 	protected int life = 3;
 	
 	private Doctor doctor;
+	protected Controller controller;
 	
 	@Override
 	public void run() {
@@ -28,7 +30,7 @@ public abstract class Doctor extends JLabel implements Runnable {
 	}
 	
 	public Doctor(Controller controller) {
-		
+		this.controller = controller;
 		this.setBounds(0, 0, 75, 75);
 		this.setFocusable(true);
 		this.addKeyListener(new KeyListener());
@@ -82,8 +84,11 @@ public abstract class Doctor extends JLabel implements Runnable {
 	}
 
 	public DoctorShot shot() {
-		DoctorShot shot = new Syringe();
+		DoctorShot shot = new Syringe(this.controller, this.getX(), this.getY());
+		this.controller.addDoctorShot(shot);
 		shot.addPower(this.powerlevel-1);
+		//Thread thread = new Thread(shot);
+		//thread.start();
 		return shot;
 	}
 
@@ -117,7 +122,7 @@ public abstract class Doctor extends JLabel implements Runnable {
 	public DoctorShot useBomb() {
 		if(this.Bomb >0) {
 			this.Bomb -= 1;
-			return new AlcoholBomb();
+			return new AlcoholBomb(this.controller, this.getX(), this.getY());
 		} else {
 			return null;
 		}

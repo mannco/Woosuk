@@ -23,7 +23,7 @@ class AlcoholBombTest {
 
 	@Test
 	void 框流烙抛胶飘() {
-		DoctorShot doctorShot = new AlcoholBomb();	//气藕 积己
+		DoctorShot doctorShot = new AlcoholBomb(controller,1,1);	//气藕 积己
 		doctorShot.Moveup();	//困肺 框流烙
 		assertEquals(-10, doctorShot.getY());
 	}
@@ -32,7 +32,7 @@ class AlcoholBombTest {
 	void 傍拜抛胶飘() {
 		Doctor doctor = new DoctorRed(controller);	//狼荤 积己
 		
-		DoctorShot bomb = new AlcoholBomb();	//气藕 积己
+		DoctorShot bomb = new AlcoholBomb(controller,1,1);	//气藕 积己
 		assertEquals(999, bomb.getAttackpoint());	//气藕 傍拜仿 犬牢
 		
 		//利 积己

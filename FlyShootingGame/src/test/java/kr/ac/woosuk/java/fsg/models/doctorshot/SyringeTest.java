@@ -60,7 +60,6 @@ class SyringeTest {
 		assertEquals(11, shot.getAttackpoint());
 	}
 	
-	
 	@Test 
     void 주사기움직임_테스트() {
        //사전조건

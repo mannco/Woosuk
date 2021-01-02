@@ -33,7 +33,7 @@ class DoctorGreenTest {
 	void 총알발사_테스트() {
 		Doctor doctor = new DoctorGreen(controller);
 		
-		DoctorShot shot = doctor.inject();
+		DoctorShot shot = doctor.shot();
 		assertNotNull(shot);
 		assertTrue(shot instanceof Syringe);
 	}
@@ -101,22 +101,22 @@ class DoctorGreenTest {
 		   //오른쪽
 		   doctor.moveRight();
 		   //테스트
-		   assertEquals(1, doctor.getx());
+		   assertEquals(1, doctor.getX());
 		   
 		   //왼쪽
 		   doctor.moveLeft();
 		   //테스트
-		   assertEquals(0, doctor.getx());
+		   assertEquals(0, doctor.getX());
 		   
 		   //위로
 		   doctor.moveUp();
 		   //테스트
-		   assertEquals(-1, doctor.gety());
+		   assertEquals(-1, doctor.getY());
 		   
 		   //아래로
 		   doctor.moveDown();
 		   //테스트
-		   assertEquals(0, doctor.gety());
+		   assertEquals(0, doctor.getY());
 	   }
 	   
 	   @Test

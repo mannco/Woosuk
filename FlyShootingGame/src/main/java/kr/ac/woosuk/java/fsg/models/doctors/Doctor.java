@@ -17,8 +17,6 @@ import kr.ac.woosuk.java.fsg.views.GameView;
 public abstract class Doctor extends JLabel implements Runnable {
 	protected int score;
 	protected int powerlevel = 1;
-	protected int x;
-	protected int y;
 	protected int Bomb = 3;
 	protected int life = 3;
 	
@@ -33,6 +31,7 @@ public abstract class Doctor extends JLabel implements Runnable {
 		
 		this.setBounds(0, 0, 75, 75);
 		this.setFocusable(true);
+		this.addKeyListener(new KeyListener());
 		
 	}
 	
@@ -44,31 +43,31 @@ public abstract class Doctor extends JLabel implements Runnable {
 	        switch(e.getKeyCode()){
 	        
 	        case KeyEvent.VK_UP:
-	        	doctor.moveUp();
+	        	moveUp();
 	        break;
 	
 	        case KeyEvent.VK_DOWN:
-	        	doctor.moveDown();
+	        	moveDown();
 	        break;
 	        
 	        case KeyEvent.VK_LEFT:
-	        	doctor.moveLeft();
+	        	moveLeft();
 	        break;
 	        
 	        case KeyEvent.VK_RIGHT:
-	        	doctor.moveRight();
+	        	moveRight();
+	        break;
+	        
+	        case KeyEvent.VK_A:
+	        	shot();
 	        break;
 	        
 	        }
-	        
 		}
-		
 	}
 	
-	public DoctorShot inject() {
-		
-		return new Syringe();
-	}
+
+	
 
 	public void getThumbsUp(Item item) {
 		this.score += 10;
@@ -99,28 +98,21 @@ public abstract class Doctor extends JLabel implements Runnable {
 	}
 
 	public void moveRight() {
-		this.x += 1;
+		this.setBounds(this.getX()+10, this.getY(), this.getWidth(), this.getHeight());
 	}
 
 	public void moveLeft() {
-		this.x -= 1;
+		this.setBounds(this.getX()-10, this.getY(), this.getWidth(), this.getHeight());
 	}
 	
 	public void moveUp() {
-		this.y -= 1;
+		this.setBounds(this.getX(), this.getY()-10, this.getWidth(), this.getHeight());
 	}
 
 	public void moveDown() {
-		this.y += 1;
+		this.setBounds(this.getX(), this.getY()+10, this.getWidth(), this.getHeight());
 	}
 
-	public int getx() {
-		return x;
-	}
-
-	public int gety() {
-		return y;
-	}
 
 	public DoctorShot useBomb() {
 		if(this.Bomb >0) {

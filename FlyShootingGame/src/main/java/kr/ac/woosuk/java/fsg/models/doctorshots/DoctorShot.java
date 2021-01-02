@@ -20,7 +20,6 @@ public abstract class DoctorShot extends JLabel {
 	   
    }
 
-   
    public int  ItemPosition() {
       return position;
    }

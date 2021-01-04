@@ -59,7 +59,7 @@ public abstract class DoctorShot extends JLabel implements Runnable {
 
 	public void search(List<Enemy> enemies) {
 		for(Enemy enemy : enemies) {
-			if(this.x == enemy.getx() && this.y ==enemy.gety()) {
+			if(this.getX() == enemy.getX() && this.getY() ==enemy.getY()) {
 				this.attackEnemy(enemy);
 				break;
 			}

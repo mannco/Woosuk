@@ -64,6 +64,7 @@ public class Controller implements Runnable {
 
 	public void removeDoctorShot(DoctorShot shot) {
 		this.doctorshots.remove(shot);
+		this.getGameView().remove(shot);
 	}
 
 	public void addEnemyShot(EnemyShot shot) {

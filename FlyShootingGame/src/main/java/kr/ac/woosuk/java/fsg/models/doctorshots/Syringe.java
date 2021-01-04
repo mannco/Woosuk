@@ -23,7 +23,15 @@ public class Syringe extends DoctorShot {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-		
+		while (this.getY() >= 0) {
+			try {
+				this.setLocation(this.getX(), this.getY()-20);
+				
+				Thread.sleep(50);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		this.controller.removeDoctorShot(this);
 	}
 }

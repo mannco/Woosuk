@@ -30,7 +30,7 @@ class ControllerTest {
     @Test
     void 애너미생성_테스트() {
         Controller controller = new Controller(gameview);
-        Enemy enemy = new Virus();
+        Enemy enemy = new Virus(controller);
         controller.createEnemy();
         assertEquals(3, controller.getEnemies().size());
         controller.addEnemy(enemy);
@@ -53,7 +53,7 @@ class ControllerTest {
     @Test
     void 적소멸_테스트() {
         Controller controller = new Controller(gameview);
-        Enemy enemy = new Virus();
+        Enemy enemy = new Virus(controller);
         controller.addEnemy(enemy);
         
         assertNotNull(controller.getEnemies());
@@ -89,7 +89,7 @@ class ControllerTest {
     @Test
     void 적샷생성_테스트() {
         Controller controller = new Controller(gameview);
-        Enemy enemy = new Virus();
+        Enemy enemy = new Virus(controller);
         EnemyShot shot = enemy.attack();
         controller.addEnemyShot(shot);
         
@@ -99,7 +99,7 @@ class ControllerTest {
     @Test
     void 적샷소멸_테스트() {
         Controller controller = new Controller(gameview);
-        Enemy enemy = new Virus();
+        Enemy enemy = new Virus(controller);
         EnemyShot shot = enemy.attack();
         controller.addEnemyShot(shot);
         
@@ -112,7 +112,7 @@ class ControllerTest {
     @Test
     void 아이템생성_테스트() {
         Controller controller = new Controller(gameview);
-        Enemy enemy = new Virus();
+        Enemy enemy = new Virus(controller);
         Item item = enemy.addItem();
         controller.addItem(item);
         
@@ -122,7 +122,7 @@ class ControllerTest {
     @Test
     void 아이템소멸_테스트() {
         Controller controller = new Controller(gameview);
-        Enemy enemy = new Virus();
+        Enemy enemy = new Virus(controller);
         Item item = enemy.addItem();
         controller.addItem(item);
         

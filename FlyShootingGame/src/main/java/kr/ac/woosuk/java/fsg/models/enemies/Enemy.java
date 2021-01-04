@@ -1,19 +1,21 @@
 package kr.ac.woosuk.java.fsg.models.enemies;
 import javax.swing.JLabel;
 
+import kr.ac.woosuk.java.fsg.controllers.Controller;
 import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
 import kr.ac.woosuk.java.fsg.models.enemyshots.VirusShot;
 import kr.ac.woosuk.java.fsg.models.items.Item;
 import kr.ac.woosuk.java.fsg.models.items.ThumbsUp;
 
 
-public abstract class Enemy extends JLabel {
+public abstract class Enemy extends JLabel implements Runnable {
 	protected int hppoint;
 	protected int x;
 	protected int y;
+	protected Controller controller;
 	
-	public Enemy() {
-		
+	public Enemy(Controller controller) {
+		this.controller = controller;
 		this.setBounds(0, 0, 75, 75);
 		
 	}
@@ -64,6 +66,12 @@ public abstract class Enemy extends JLabel {
 	public Item addItem() {
 		// TODO Auto-generated method stub
 		return new ThumbsUp();
+	}
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
 	}
 }
 

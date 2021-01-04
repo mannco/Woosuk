@@ -61,6 +61,7 @@ public abstract class DoctorShot extends JLabel implements Runnable {
 		for(Enemy enemy : enemies) {
 			if(this.getX() == enemy.getX() && this.getY() ==enemy.getY()) {
 				this.attackEnemy(enemy);
+				this.controller.removeDoctorShot(this);
 				break;
 			}
 		}

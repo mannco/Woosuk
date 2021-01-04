@@ -124,7 +124,7 @@ class DoctorGreenTest {
 		   //닥터생성
 		   Doctor doctor = new DoctorGreen(controller);
 		   //적 생성
-		   Enemy enemy = new Virus();
+		   Enemy enemy = new Virus(controller);
 		   //바이러스샷을 닥터가 맞음
 		   EnemyShot shot = enemy.attack();
 		   

@@ -19,7 +19,7 @@ class VirusShotTest {
 
 	@Test
 	void 공격테스트() {
-		Enemy enemy = new Virus();	//바이러스 생성
+		Enemy enemy = new Virus(controller);	//바이러스 생성
 		
 		EnemyShot enemyShot = new VirusShot();	//발사체 생성
 		assertEquals(1, enemyShot.getAttackpoint());	//발사체 공격력 확인

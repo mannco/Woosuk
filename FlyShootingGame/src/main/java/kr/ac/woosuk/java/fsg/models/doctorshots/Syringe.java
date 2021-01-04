@@ -1,11 +1,12 @@
 package kr.ac.woosuk.java.fsg.models.doctorshots;
 
 import java.awt.Graphics;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 
 import kr.ac.woosuk.java.fsg.controllers.Controller;
-
+import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 public class Syringe extends DoctorShot {
 	
 	@Override
@@ -23,10 +24,18 @@ public class Syringe extends DoctorShot {
 
 	@Override
 	public void run() {
-		while (this.getY() >= 0) {
+		flag : while (this.getY() >= 0) {
 			try {
 				this.setLocation(this.getX(), this.getY()-20);
-				
+				List<Enemy> enemies = this.controller.getEnemies();
+				for(Enemy enemy : enemies) {
+					if(this.getX()+10 >= enemy.getX() && this.getX()-10 <= enemy.getX() && this.getY()-5 <= enemy.getY()) {
+						this.attackEnemy(enemy);
+						System.out.println(enemy.getHppoint());
+						this.controller.removeDoctorShot(this);
+						break flag;
+					}
+				}
 				Thread.sleep(50);
 			} catch (Exception e) {
 				e.printStackTrace();

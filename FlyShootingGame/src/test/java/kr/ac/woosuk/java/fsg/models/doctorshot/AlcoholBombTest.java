@@ -36,8 +36,8 @@ class AlcoholBombTest {
 		assertEquals(999, bomb.getAttackpoint());	//气藕 傍拜仿 犬牢
 		
 		//利 积己
-		Enemy enemy = new Virus();
-		Enemy enemy2 = new Virus();
+		Enemy enemy = new Virus(controller);
+		Enemy enemy2 = new Virus(controller);
 		ArrayList<Enemy> list = new ArrayList<Enemy>();
 		list.add(enemy);
 		list.add(enemy2);

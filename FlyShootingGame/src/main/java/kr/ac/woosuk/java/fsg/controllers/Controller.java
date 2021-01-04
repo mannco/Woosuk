@@ -15,15 +15,21 @@ public class Controller implements Runnable {
 
 
 	private Doctor doctors;
-    private List<Enemy> enemies = new ArrayList<Enemy>();
+    private List<Enemy> enemies;
     private List<DoctorShot> doctorshots;
-    private List<EnemyShot> enemyShots = new ArrayList<EnemyShot>();
-    private List<Item> items = new ArrayList<Item>();
+    private List<EnemyShot> enemyShots;
+    private List<Item> items;
     private GameView gameView;
+	private List<Stage> stages;
     
     public Controller(GameView gameview) {
     	this.gameView = gameview;
     	this.doctorshots = new ArrayList<DoctorShot>();
+    	this.enemies = new ArrayList<Enemy>();
+    	this.enemyShots = new ArrayList<EnemyShot>();
+    	this.items = new ArrayList<Item>();
+    	this.stages = new ArrayList<Stage>();
+		this.stages.add(new Stage1(this));
 	}
     
 	public GameView getGameView() {
@@ -39,6 +45,7 @@ public class Controller implements Runnable {
 
     public void addEnemy(Enemy enemy) {
         this.enemies.add(enemy);
+        this.getGameView().add(enemy);
     }
 
     public void removeDoctor() {
@@ -51,6 +58,7 @@ public class Controller implements Runnable {
 
     public void removeEnemy(Enemy enemy) {
         this.enemies.remove(enemy);
+        this.getGameView().remove(enemy);
     }
 
 	public void addDoctorShot(DoctorShot shot) {
@@ -91,16 +99,34 @@ public class Controller implements Runnable {
 		this.items.remove(item);
 	}
 	public void createEnemy() {
-		this.enemies.add(new Virus());
-		this.enemies.add(new Virus());
-		this.enemies.add(new Virus());
+//		this.enemies.add(new Virus());
+//		this.enemies.add(new Virus());
+//		this.enemies.add(new Virus());
 	}
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-		
+		for(Stage stage : this.stages) {
+			try {
+				stage.startStage();
+				stage.runningStage();
+				while(!this.isCompleteStage()) {
+					Thread.sleep(100);
+				}
+				if(this.isCompleteStage()) {
+				stage.endStage();
+				}
+			} catch(InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		System.out.println("All Stage Complete!!");
 	}
-
-
+	public boolean isCompleteStage() {
+	
+			if(getEnemies().size() > 0) {
+				return false;
+		}
+		return true;
+	}
 }

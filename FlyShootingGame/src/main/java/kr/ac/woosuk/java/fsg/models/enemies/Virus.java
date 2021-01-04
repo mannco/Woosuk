@@ -4,6 +4,8 @@ import java.awt.Graphics;
 
 import javax.swing.ImageIcon;
 
+import kr.ac.woosuk.java.fsg.controllers.Controller;
+
 public class Virus extends Enemy{
 	
 	@Override
@@ -14,8 +16,22 @@ public class Virus extends Enemy{
 		super.paintComponent(g);
 	}
 
-	public Virus() {
+	public Virus(Controller controller) {
+		super(controller);
 		this.hppoint = 20;
+	}
+
+	@Override
+	public void run() {
+		while (this.hppoint > 0) {
+			try {
+				
+				Thread.sleep(200);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		this.controller.removeEnemy(this);
 	}
 	
 }

@@ -32,7 +32,7 @@ class SyringeTest {
 	      //주사기의 기본공격력은 10
 	      assertEquals(10, shot.getAttackpoint());
 	      //적이 생성됨
-	      Enemy virus = new Virus();
+	      Enemy virus = new Virus(controller);
 	      //적의 체력은 20
 	      assertEquals(20, virus.hp());
 	      //총알이 바이러스를 때림

@@ -90,7 +90,7 @@ public class GameView extends JPanel implements Runnable {
 //		doctorshot.setLocation(250, 300);
 		
 		//TEST EnemyShot
-		EnemyShot enemyshot = new VirusShot();
+/*		EnemyShot enemyshot = new VirusShot();
 		this.add(enemyshot);
 		enemyshot.setLocation(350, 200);
 		
@@ -104,7 +104,7 @@ public class GameView extends JPanel implements Runnable {
 		
 		enemyshot = new GermShot();
 		this.add(enemyshot);
-		enemyshot.setLocation(350, 500);
+		enemyshot.setLocation(350, 500);	*/
 		
 		this.setFocusable(false);
 		

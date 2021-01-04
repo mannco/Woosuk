@@ -84,7 +84,7 @@ public abstract class Doctor extends JLabel implements Runnable {
 	}
 
 	public DoctorShot shot() {
-		DoctorShot shot = new Syringe(this.controller, this.getX(), this.getY());
+		DoctorShot shot = new Syringe(this.controller, this.getX()+50, this.getY()-5);
 		this.controller.addDoctorShot(shot);
 		shot.addPower(this.powerlevel-1);
 		Thread thread = new Thread(shot);

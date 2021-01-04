@@ -18,7 +18,7 @@ public abstract class DoctorShot extends JLabel implements Runnable {
    
    public DoctorShot(Controller controller, int x, int y) {
 	   this.controller = controller;
-	   this.setBounds(x, y, 75, 75);
+	   this.setBounds(x, y, 10, 40);
 	   
    }
 

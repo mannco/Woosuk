@@ -103,19 +103,27 @@ public abstract class Doctor extends JLabel implements Runnable {
 	}
 
 	public void moveRight() {
+		if(this.getX() < 510 ) {
 		this.setBounds(this.getX()+10, this.getY(), this.getWidth(), this.getHeight());
+		}
 	}
 
 	public void moveLeft() {
+		if(this.getX() > 0 ) {
 		this.setBounds(this.getX()-10, this.getY(), this.getWidth(), this.getHeight());
+		}
 	}
 	
 	public void moveUp() {
+		if(this.getY() > 0 ) {
 		this.setBounds(this.getX(), this.getY()-10, this.getWidth(), this.getHeight());
+		}
 	}
 
 	public void moveDown() {
+		if(this.getY() < 685 ) {
 		this.setBounds(this.getX(), this.getY()+10, this.getWidth(), this.getHeight());
+		}
 	}
 
 

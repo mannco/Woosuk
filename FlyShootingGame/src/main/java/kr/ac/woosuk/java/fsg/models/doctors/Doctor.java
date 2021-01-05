@@ -21,6 +21,12 @@ public abstract class Doctor extends JLabel implements Runnable {
 	protected int Bomb = 3;
 	protected int life = 3;
 	
+	boolean Up;
+	boolean Down;
+	boolean Left;
+	boolean Right;
+	boolean shot;
+	
 	private Doctor doctor;
 	protected Controller controller;
 	
@@ -39,32 +45,66 @@ public abstract class Doctor extends JLabel implements Runnable {
 	
 	private class KeyListener extends KeyAdapter {
 		
+
 		@Override
 	    public void keyPressed(KeyEvent e) {
-			
 	        switch(e.getKeyCode()){
 	        
 	        case KeyEvent.VK_UP:
-	        	moveUp();
+	        	Up = true;
 	        break;
 	
 	        case KeyEvent.VK_DOWN:
-	        	moveDown();
+	        	Down = true;
 	        break;
 	        
 	        case KeyEvent.VK_LEFT:
-	        	moveLeft();
+	        	Left = true;
 	        break;
 	        
 	        case KeyEvent.VK_RIGHT:
-	        	moveRight();
+	        	Right = true;
 	        break;
 	        
 	        case KeyEvent.VK_A:
-	        	shot();
+	        	shot = true;
 	        break;
 	        
+	        
 	        }
+	        if (Up) {
+	        	moveUp();
+	        }
+	        if (Down) {
+	        	moveDown();
+	        }
+	        if (Right) {
+	        	moveRight();
+	        }
+	        if (Left) {
+	        	moveLeft();
+	        }
+	        if (shot) {
+	        	shot();
+	        }
+	        
+		}
+		
+		@Override
+		public void keyReleased(KeyEvent e) {
+			// TODO Auto-generated method stub
+			super.keyReleased(e);
+			if(e.getKeyCode()==KeyEvent.VK_UP) {
+				Up = false;
+			} else if(e.getKeyCode()==KeyEvent.VK_DOWN) {
+				Down = false;
+			} else if(e.getKeyCode()==KeyEvent.VK_RIGHT) {
+				Right = false;
+			} else if(e.getKeyCode()==KeyEvent.VK_LEFT) {
+				Left = false;
+			} else if(e.getKeyCode()==KeyEvent.VK_A) {
+				shot = false;
+			}
 		}
 	}
 	

@@ -107,7 +107,7 @@ public class GameView extends JPanel implements Runnable {
 		enemyshot.setLocation(350, 500);	*/
 		
 		this.setFocusable(false);
-		
+		doctor.requestFocus();
 	}
 	
 	@Override

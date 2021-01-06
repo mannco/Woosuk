@@ -3,6 +3,7 @@ package kr.ac.woosuk.java.fsg.models.doctors;
 import java.awt.event.KeyAdapter;
 
 import java.awt.event.KeyEvent;
+import java.util.List;
 
 import javax.swing.JLabel;
 
@@ -11,8 +12,12 @@ import kr.ac.woosuk.java.fsg.controllers.Controller;
 import kr.ac.woosuk.java.fsg.models.doctorshots.AlcoholBomb;
 import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;
 import kr.ac.woosuk.java.fsg.models.doctorshots.Syringe;
+import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
+import kr.ac.woosuk.java.fsg.models.items.AlcoholBombUp;
 import kr.ac.woosuk.java.fsg.models.items.Item;
+import kr.ac.woosuk.java.fsg.models.items.LifeUp;
 import kr.ac.woosuk.java.fsg.models.items.PowerUp;
+import kr.ac.woosuk.java.fsg.models.items.ThumbsUp;
 import kr.ac.woosuk.java.fsg.views.GameView;
 
 public abstract class Doctor extends JLabel implements Runnable {
@@ -32,7 +37,25 @@ public abstract class Doctor extends JLabel implements Runnable {
 	
 	@Override
 	public void run() {
-			
+/*		while (this.life > 0) {
+			try {
+				System.out.println("ดฺลอ");
+				List<Item> items = this.controller.getItems();
+				for(Item item : items) {
+					if(this.getX() <= item.getX()+75 && this.getX() >= item.getX() && this.getY() <= item.getY()) {
+						this.getThumbsUp(item);
+						this.getLifeUp(item);
+						this.getPowerUp(item);
+						this.getBombUp(item);
+						this.controller.removeItem(item);
+						System.out.println(this.life);
+					}
+				}
+				Thread.sleep(50);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}*/
 	}
 	
 	public Doctor(Controller controller) {
@@ -112,7 +135,9 @@ public abstract class Doctor extends JLabel implements Runnable {
 	
 
 	public void getThumbsUp(Item item) {
+		if(item instanceof ThumbsUp) {
 		this.score += 10;
+		}
 	}
 
 	public int getScore() {
@@ -204,10 +229,14 @@ public abstract class Doctor extends JLabel implements Runnable {
 	}
 
 	public void getLifeUp(Item item) {
+		if(item instanceof LifeUp) {
 		this.life += 1;
+		}
 	}
 
 	public void getBombUp(Item item) {
+		if(item instanceof AlcoholBombUp) {
 		this.Bomb += 1;
+		}
 	}
 }

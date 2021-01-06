@@ -4,12 +4,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import kr.ac.woosuk.java.fsg.controllers.Controller;
+import kr.ac.woosuk.java.fsg.views.GameView;
+
 class AlcoholBombUpTest {
+	GameView gameview = new GameView();
+	Controller controller = new Controller(gameview);
 
 	@Test
 	void 폭탄개수업움직임_테스트() {
 		// 아이템 생성
-		Item item = new AlcoholBombUp();
+		Item item = new AlcoholBombUp(controller);
 		item.moveRight();
 		assertEquals(1, item.getx());
 		

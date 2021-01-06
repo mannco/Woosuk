@@ -44,7 +44,7 @@ class ControllerTest {
         controller.addDoctor(doctor);
         assertNotNull(controller.getDoctors());
 
-        controller.removeDoctor();
+        controller.removeDoctor(doctor);
 
         assertNull(controller.getDoctors());
 

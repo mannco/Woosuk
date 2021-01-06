@@ -14,7 +14,7 @@ import kr.ac.woosuk.java.fsg.views.GameView;
 public class Controller implements Runnable {
 
 
-	private Doctor doctors;
+	private List<Doctor> doctors;
     private List<Enemy> enemies;
     private List<DoctorShot> doctorshots;
     private List<EnemyShot> enemyShots;
@@ -27,6 +27,7 @@ public class Controller implements Runnable {
     	this.doctorshots = new ArrayList<DoctorShot>();
     	this.enemies = new ArrayList<Enemy>();
     	this.enemyShots = new ArrayList<EnemyShot>();
+    	this.doctors = new ArrayList<Doctor>();
     	this.items = new ArrayList<Item>();
     	this.stages = new ArrayList<Stage>();
 		this.stages.add(new Stage1(this));
@@ -40,7 +41,8 @@ public class Controller implements Runnable {
     }
 
     public void addDoctor(Doctor doctor) {
-        this.doctors = doctor;
+        this.doctors.add(doctor);
+        this.getGameView().add(doctor);
     }
 
     public void addEnemy(Enemy enemy) {
@@ -48,11 +50,12 @@ public class Controller implements Runnable {
         this.getGameView().add(enemy);
     }
 
-    public void removeDoctor() {
-        this.doctors = null;
+    public void removeDoctor(Doctor doctor) {
+        this.doctors.remove(doctor);
+        this.getGameView().remove(doctor);
     }
 
-    public Doctor getDoctors() {
+    public List<Doctor> getDoctors() {
         return doctors;
     }
 
@@ -89,6 +92,7 @@ public class Controller implements Runnable {
 
 	public void addItem(Item item) {
 		this.items.add(item);
+		this.getGameView().add(item);
 	}
 
 	public List<Item> getItems() {
@@ -97,6 +101,7 @@ public class Controller implements Runnable {
 
 	public void removeItem(Item item) {
 		this.items.remove(item);
+		this.getGameView().remove(item);
 	}
 	public void createEnemy() {
 		

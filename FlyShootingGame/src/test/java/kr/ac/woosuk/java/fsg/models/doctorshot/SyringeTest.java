@@ -47,7 +47,7 @@ class SyringeTest {
 		//주사기가 발사됨
 		Doctor doctor = new DoctorRed(controller);
 		//파워업 아이템이 생성됨
-		Item item = new PowerUp();
+		Item item = new PowerUp(controller);
 		
 		//행위
 		// 의사가 아이템을 먹음

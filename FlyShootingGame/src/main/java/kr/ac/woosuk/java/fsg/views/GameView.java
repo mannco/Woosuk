@@ -51,9 +51,9 @@ public class GameView extends JPanel implements Runnable {
 		this.add(this.lifeBoard);
 		
 		//TEST Doctor
-		Doctor doctor = new DoctorRed(controller);
-		this.add(doctor);
-		doctor.setLocation(50, 200);
+//		Doctor doctor = new DoctorRed(controller);
+//		this.add(doctor);
+//		doctor.setLocation(50, 200);
 		
 //		doctor = new DoctorBlue(controller);
 //		this.add(doctor);
@@ -107,7 +107,7 @@ public class GameView extends JPanel implements Runnable {
 		enemyshot.setLocation(350, 500);	*/
 		
 		this.setFocusable(false);
-		doctor.requestFocus();
+		//doctor.requestFocus();
 	}
 	
 	@Override

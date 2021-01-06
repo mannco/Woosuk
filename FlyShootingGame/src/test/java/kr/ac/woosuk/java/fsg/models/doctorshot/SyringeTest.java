@@ -60,22 +60,7 @@ class SyringeTest {
 		assertEquals(11, shot.getAttackpoint());
 	}
 	
-	@Test 
-    void 주사기움직임_테스트() {
-       //사전조건
-       //의사가 생성됨
-       Doctor doctor = new DoctorRed(controller);
-       
-       //행위
-       //의사가 총알 발사
-       DoctorShot shot = doctor.shot();
-       //총알이 위로 이동함
-       shot.Moveup();
-       
-       //테스트
-       //주사기는 10만큼 움직일 수 있음
-       assertEquals(-10, shot.getY());
-    }
+	
 	
 	@Test
 	void 적찾기_테스트() {

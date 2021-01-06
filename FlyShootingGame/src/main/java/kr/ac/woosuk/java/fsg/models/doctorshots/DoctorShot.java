@@ -11,15 +11,12 @@ import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 public abstract class DoctorShot extends JLabel implements Runnable {
    protected int attackpoint;
    protected int position;
-   protected int y;
    protected int bombAttackPoint;
-   protected int x;
    protected Controller controller;
    
    public DoctorShot(Controller controller, int x, int y) {
 	   this.controller = controller;
 	   this.setBounds(x, y, 10, 40);
-	   
    }
 
    public int  ItemPosition() {
@@ -38,20 +35,12 @@ public abstract class DoctorShot extends JLabel implements Runnable {
 		virus.attack(this.attackpoint);
 	}
 	
-	public void Moveup() {
-		this.y = -10;   
-	}
-		   
-	public int gety() {
-		return y;
-	}
-
+	
 	public void attackAllEnemy(Enemy enemy) {
 		enemy.attack(this.attackpoint);
 	}
 	
 	public void attackAllEnemy(ArrayList<Enemy> list) {
-		// TODO Auto-generated method stub
 		for (Enemy enemy : list) {
 			enemy.setHppoint(this.attackpoint);
 		}
@@ -68,7 +57,6 @@ public abstract class DoctorShot extends JLabel implements Runnable {
 	}
 	@Override
 		public void run() {
-			// TODO Auto-generated method stub
 			
 		}
 }

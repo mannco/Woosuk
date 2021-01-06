@@ -10,8 +10,6 @@ import kr.ac.woosuk.java.fsg.models.items.ThumbsUp;
 
 public abstract class Enemy extends JLabel implements Runnable {
 	protected int hppoint;
-	protected int x;
-	protected int y;
 	protected Controller controller;
 	
 	public Enemy(Controller controller) {
@@ -32,30 +30,6 @@ public abstract class Enemy extends JLabel implements Runnable {
 		return new VirusShot();
 	}
 
-	public void moveright() {
-		this.x+=1;
-	}
-
-	public void moveleft() {
-		this.x-=1;
-	}
-	
-	public void moveup() {
-		this.y-=1;
-	}
-	
-	public void movedown() {
-		this.y+=1;
-	}
-
-	public int getx() {
-		return x;
-	}
-
-	public int gety() {
-		return y;
-	}
-
 	public int getHppoint() {
 		return hppoint;
 	}
@@ -64,13 +38,11 @@ public abstract class Enemy extends JLabel implements Runnable {
 	}
 
 	public Item addItem() {
-		// TODO Auto-generated method stub
 		return new ThumbsUp();
 	}
 	
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		
 	}
 }

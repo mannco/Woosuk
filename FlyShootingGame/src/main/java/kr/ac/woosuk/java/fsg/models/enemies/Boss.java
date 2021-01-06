@@ -10,7 +10,6 @@ public class Boss extends Enemy{
 	
 	public Boss(Controller controller) {
 		super(controller);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -23,7 +22,6 @@ public class Boss extends Enemy{
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		
 	}
 	

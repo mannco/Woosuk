@@ -6,8 +6,6 @@ import kr.ac.woosuk.java.fsg.models.doctors.Doctor;
 
 public abstract class EnemyShot extends JLabel {
 	protected int attackpoint = 1;
-	protected int y;
-	protected int x;
 	
 	public EnemyShot() {
 		
@@ -23,16 +21,8 @@ public abstract class EnemyShot extends JLabel {
 		doctor.attack(this.attackpoint);
 	}
 
-	public void moveDown() {
-		this.y += 1;
-	}
 
-	public int gety() {
-		return y;
-	}
-	
 	public int attack() {
 		return attackpoint;
 	}
-
 }

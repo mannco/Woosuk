@@ -37,7 +37,6 @@ class GermShotTest {
 	@Test
 	void 움직임테스트() {
 		EnemyShot enemyShot = new GermShot();	//세균샷 생성
-		enemyShot.moveDown();	//아래로 움직임
 		assertEquals(1, enemyShot.getY());
 	}
 

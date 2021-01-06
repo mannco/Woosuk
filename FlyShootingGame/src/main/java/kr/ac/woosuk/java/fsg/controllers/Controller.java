@@ -99,9 +99,7 @@ public class Controller implements Runnable {
 		this.items.remove(item);
 	}
 	public void createEnemy() {
-//		this.enemies.add(new Virus());
-//		this.enemies.add(new Virus());
-//		this.enemies.add(new Virus());
+		
 	}
 
 	@Override

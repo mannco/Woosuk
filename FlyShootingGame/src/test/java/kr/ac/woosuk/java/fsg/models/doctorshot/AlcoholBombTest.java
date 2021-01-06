@@ -22,13 +22,6 @@ class AlcoholBombTest {
 	Controller controller = new Controller(gameView);
 
 	@Test
-	void 움직임테스트() {
-		DoctorShot doctorShot = new AlcoholBomb(controller,1,1);	//폭탄 생성
-		doctorShot.Moveup();	//위로 움직임
-		assertEquals(-10, doctorShot.getY());
-	}
-	
-	@Test
 	void 공격테스트() {
 		Doctor doctor = new DoctorRed(controller);	//의사 생성
 		

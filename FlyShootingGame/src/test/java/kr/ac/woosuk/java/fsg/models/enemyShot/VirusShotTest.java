@@ -35,7 +35,6 @@ class VirusShotTest {
 	@Test
 	void 움직임테스트() {
 		EnemyShot enemyShot = new VirusShot();	//바이러스샷 생성
-		enemyShot.moveDown();	//아래로 움직임
 		assertEquals(1, enemyShot.getY());
 	}
 

@@ -10,7 +10,7 @@ public class Bacteria extends Enemy{
 	
 	public Bacteria(Controller controller) {
 		super(controller);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
@@ -23,7 +23,6 @@ public class Bacteria extends Enemy{
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		
 	}
 	

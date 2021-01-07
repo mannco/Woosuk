@@ -29,7 +29,7 @@ public abstract class Enemy extends JLabel implements Runnable {
 	}
 
 	public EnemyShot attack() {
-		EnemyShot shot = new VirusShot(this.controller, this.getX(), this.getY());
+		EnemyShot shot = new VirusShot(this.controller, this.getX()+34, this.getY());
 		this.controller.addEnemyShot(shot);
 		Thread thread = new Thread(shot);
 		thread.start();

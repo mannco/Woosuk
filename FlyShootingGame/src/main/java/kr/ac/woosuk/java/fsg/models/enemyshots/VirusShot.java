@@ -25,37 +25,19 @@ public class VirusShot extends EnemyShot {
 
 	@Override
 	public void run() {
-		int i=0;
-		int doctorX = 300;
-		int doctorY = 800;
-		flag : while (i > 60) {
+		flag : while (this.getX() <= 800) {
 			try {
-				if(this.getX() > doctorX) {
-					this.setLocation(this.getX()-20, this.getY());
-				}
-				if(this.getX() < doctorX) {
-					this.setLocation(this.getX()+20, this.getY());
-				}
-				if(this.getY() < doctorY) {
-					this.setLocation(this.getX(), this.getY()+20);
-				}
-				if(this.getY() > doctorY) {
-					this.setLocation(this.getX(), this.getY()-20);
-				}
+				this.setLocation(this.getX(), this.getY()+1);
 				List<Doctor> doctors = this.controller.getDoctors();
 				for(Doctor doctor : doctors) {
-					if(i==0) {
-						doctorX = doctor.getX();
-						doctorY = doctor.getY();
-					}
-					if(this.getX() <= doctor.getX()+75 && this.getX() >= doctor.getX() && this.getY()-5 <= doctor.getY()) {
+					if(this.getX() >= doctor.getX() && this.getX() <= doctor.getX()+75 && this.getY() >= doctor.getY() &&  this.getY() <= doctor.getY()+75) {
 						this.AttackDoctor(doctor);
 						this.controller.removeEnemyShot(this);
+						System.out.println(doctor.getLife());
 						break flag;
 					}
 				}
-				i++;
-				Thread.sleep(50);
+				Thread.sleep(10);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

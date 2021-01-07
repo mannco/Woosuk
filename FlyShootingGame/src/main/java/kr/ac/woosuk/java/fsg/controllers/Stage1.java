@@ -40,7 +40,7 @@ public class Stage1 implements Stage {
 		
 		Enemy enemy2 =  new Virus(this.controller);
 		this.controller.addEnemy(enemy2);
-		enemy2.setLocation(200, 400);
+		enemy2.setLocation(400, 200);
 		Thread thread2 = new Thread(enemy2);
 		thread2.start();
 	}

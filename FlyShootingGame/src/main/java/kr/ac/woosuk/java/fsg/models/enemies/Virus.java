@@ -31,10 +31,15 @@ public class Virus extends Enemy{
 
 	@Override
 	public void run() {
+		int j = 0;
 		while (this.hppoint > 0) {
 			try {
+				if(j%10 == 0) {
 				this.attack();
-				Thread.sleep(2000);
+				}
+				
+				j++;
+				Thread.sleep(200);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

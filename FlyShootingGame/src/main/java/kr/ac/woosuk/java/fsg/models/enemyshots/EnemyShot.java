@@ -11,7 +11,7 @@ public abstract class EnemyShot extends JLabel implements Runnable {
 	
 	public EnemyShot(Controller controller, int x, int y) {
 		this.controller = controller;
-		this.setBounds(x, y, 75, 75);
+		this.setBounds(x, y, 15, 15);
 		
 	}
 

@@ -37,25 +37,16 @@ public abstract class Doctor extends JLabel implements Runnable {
 	
 	@Override
 	public void run() {
-/*		while (this.life > 0) {
+		while (this.life > 0) {
 			try {
-				System.out.println("ดฺลอ");
-				List<Item> items = this.controller.getItems();
-				for(Item item : items) {
-					if(this.getX() <= item.getX()+75 && this.getX() >= item.getX() && this.getY() <= item.getY()) {
-						this.getThumbsUp(item);
-						this.getLifeUp(item);
-						this.getPowerUp(item);
-						this.getBombUp(item);
-						this.controller.removeItem(item);
-						System.out.println(this.life);
-					}
-				}
+
+				
 				Thread.sleep(50);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}*/
+		}
+		this.controller.removeDoctor(this);
 	}
 	
 	public Doctor(Controller controller) {

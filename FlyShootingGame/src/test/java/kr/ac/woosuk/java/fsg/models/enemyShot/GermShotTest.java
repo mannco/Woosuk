@@ -23,7 +23,7 @@ class GermShotTest {
 	void 공격테스트() {
 		Enemy enemy = new Virus(controller);	//바이러스 생성
 		
-		EnemyShot enemyShot = new GermShot();	//발사체 생성
+		EnemyShot enemyShot = new GermShot(controller,1,1);	//발사체 생성
 		assertEquals(1, enemyShot.getAttackpoint());	//발사체 공격력 확인
 		
 		Doctor doctor = new DoctorRed(controller);	//의사 생성
@@ -36,7 +36,7 @@ class GermShotTest {
 	
 	@Test
 	void 움직임테스트() {
-		EnemyShot enemyShot = new GermShot();	//세균샷 생성
+		EnemyShot enemyShot = new GermShot(controller,1,1);	//세균샷 생성
 		assertEquals(1, enemyShot.getY());
 	}
 

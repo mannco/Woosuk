@@ -2,6 +2,8 @@ package kr.ac.woosuk.java.fsg.models.enemies;
 import javax.swing.JLabel;
 
 import kr.ac.woosuk.java.fsg.controllers.Controller;
+import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;
+import kr.ac.woosuk.java.fsg.models.doctorshots.Syringe;
 import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
 import kr.ac.woosuk.java.fsg.models.enemyshots.VirusShot;
 import kr.ac.woosuk.java.fsg.models.items.Item;
@@ -27,7 +29,11 @@ public abstract class Enemy extends JLabel implements Runnable {
 	}
 
 	public EnemyShot attack() {
-		return new VirusShot();
+		EnemyShot shot = new VirusShot(this.controller, this.getX(), this.getY());
+		this.controller.addEnemyShot(shot);
+		Thread thread = new Thread(shot);
+		thread.start();
+		return shot;
 	}
 
 	public int getHppoint() {

@@ -80,6 +80,7 @@ public class Controller implements Runnable {
 
 	public void addEnemyShot(EnemyShot shot) {
 		this.enemyShots.add(shot);
+		this.getGameView().add(shot);
 	}
 
 	public List<EnemyShot> getEnemyshots() {
@@ -88,6 +89,7 @@ public class Controller implements Runnable {
 
 	public void removeEnemyShot(EnemyShot shot) {
 		this.enemyShots.remove(shot);
+		this.getGameView().remove(shot);
 	}
 
 	public void addItem(Item item) {

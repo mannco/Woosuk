@@ -1,11 +1,13 @@
 package kr.ac.woosuk.java.fsg.models.enemies;
 
 import java.awt.Graphics;
+import java.util.List;
 import java.util.Random;
 
 import javax.swing.ImageIcon;
 
 import kr.ac.woosuk.java.fsg.controllers.Controller;
+import kr.ac.woosuk.java.fsg.models.doctors.Doctor;
 import kr.ac.woosuk.java.fsg.models.items.AlcoholBombUp;
 import kr.ac.woosuk.java.fsg.models.items.Item;
 import kr.ac.woosuk.java.fsg.models.items.LifeUp;
@@ -31,8 +33,8 @@ public class Virus extends Enemy{
 	public void run() {
 		while (this.hppoint > 0) {
 			try {
-				
-				Thread.sleep(200);
+				this.attack();
+				Thread.sleep(2000);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

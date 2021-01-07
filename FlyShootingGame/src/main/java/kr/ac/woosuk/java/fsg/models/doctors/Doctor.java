@@ -93,6 +93,8 @@ public abstract class Doctor extends JLabel implements Runnable {
 	        	shot = true;
 	        break;
 	        
+	        case KeyEvent.VK_S:
+	        	useBomb();
 	        
 	        }
 	        if (Up) {
@@ -193,7 +195,7 @@ public abstract class Doctor extends JLabel implements Runnable {
 
 
 	public DoctorShot useBomb() {
-		if(this.Bomb >0) {
+		if(this.Bomb > 0) {
 			this.Bomb -= 1;
 			return new AlcoholBomb(this.controller, this.getX(), this.getY());
 		} else {
@@ -230,7 +232,12 @@ public abstract class Doctor extends JLabel implements Runnable {
 
 	public void getLifeUp(Item item) {
 		if(item instanceof LifeUp) {
-		this.life += 1;
+			if(this.life < 3) {
+				this.life += 1;
+				System.out.println("닥터 라이프 증가");
+			} else {
+				System.out.println("Life의 최대 개수는 3개 입니다");
+			}
 		}
 	}
 

@@ -31,7 +31,6 @@ public void run() {
 				if(this.getX()+75 >= doctor.getX() && this.getX() <= doctor.getX() && this.getY()+75 >= doctor.getY() && this.getY() <= doctor.getY()) {
 					doctor.getPowerUp(this);
 					this.controller.removeItem(this);
-					System.out.println(doctor.getPowerLevel());
 					break flag;
 				}
 			}

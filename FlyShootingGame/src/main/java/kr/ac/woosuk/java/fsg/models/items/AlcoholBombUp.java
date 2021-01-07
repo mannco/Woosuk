@@ -32,8 +32,6 @@ public class AlcoholBombUp extends Item {
 				for(Doctor doctor : doctors) {
 					if(this.getX()+75 >= doctor.getX() && this.getX() <= doctor.getX() && this.getY()+75 >= doctor.getY() && this.getY() <= doctor.getY()) {
 						doctor.getBombUp(this);
-						this.controller.removeItem(this);
-						System.out.println(doctor.getBombScore());
 						break flag;
 					}
 				}

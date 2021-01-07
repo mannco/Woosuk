@@ -33,7 +33,6 @@ public class LifeUp extends Item {
 					if(this.getX()+75 >= doctor.getX() && this.getX() <= doctor.getX() && this.getY()+75 >= doctor.getY() && this.getY() <= doctor.getY()) {
 						doctor.getLifeUp(this);
 						this.controller.removeItem(this);
-						System.out.println(doctor.getLife());
 						break flag;
 					}
 				}

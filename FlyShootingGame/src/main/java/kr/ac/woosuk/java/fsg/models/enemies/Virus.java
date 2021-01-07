@@ -34,7 +34,11 @@ public class Virus extends Enemy{
 		int j = 0;
 		while (this.hppoint > 0) {
 			try {
-				if(j%10 == 0) {
+				this.setLocation(this.getX(), this.getY()+5);
+				if(this.getY() >= 800) {
+					this.controller.removeEnemy(this);
+				}
+				if(j%15 == 0) {
 				this.attack();
 				}
 				

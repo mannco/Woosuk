@@ -38,30 +38,11 @@ public class Stage1 implements Stage {
 		Thread thread = new Thread(enemy);
 		thread.start();
 		
-		
-		Item item = new LifeUp(this.controller);
-		this.controller.addItem(item);
-		item.setLocation(300, 300);
-		Thread thread2 = new Thread(item);
+		Enemy enemy2 =  new Virus(this.controller);
+		this.controller.addEnemy(enemy2);
+		enemy2.setLocation(200, 400);
+		Thread thread2 = new Thread(enemy2);
 		thread2.start();
-		
-		Item item2 = new PowerUp(this.controller);
-		this.controller.addItem(item2);
-		item2.setLocation(300, 400);
-		Thread thread3 = new Thread(item2);
-		thread3.start();
-		
-		Item item3 = new ThumbsUp(this.controller);
-		this.controller.addItem(item3);
-		item3.setLocation(400, 300);
-		Thread thread4 = new Thread(item3);
-		thread4.start();
-		
-		Item item4 = new AlcoholBombUp(this.controller);
-		this.controller.addItem(item4);
-		item4.setLocation(400, 400);
-		Thread thread5 = new Thread(item4);
-		thread5.start();
 	}
 
 	@Override

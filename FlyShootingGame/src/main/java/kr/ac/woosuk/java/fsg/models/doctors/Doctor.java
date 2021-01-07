@@ -95,6 +95,8 @@ public abstract class Doctor extends JLabel implements Runnable {
 	        
 	        case KeyEvent.VK_S:
 	        	useBomb();
+	        break;
+	        
 	        
 	        }
 	        if (Up) {
@@ -117,7 +119,6 @@ public abstract class Doctor extends JLabel implements Runnable {
 		
 		@Override
 		public void keyReleased(KeyEvent e) {
-			// TODO Auto-generated method stub
 			super.keyReleased(e);
 			if(e.getKeyCode()==KeyEvent.VK_UP) {
 				Up = false;
@@ -197,7 +198,11 @@ public abstract class Doctor extends JLabel implements Runnable {
 	public DoctorShot useBomb() {
 		if(this.Bomb > 0) {
 			this.Bomb -= 1;
-			return new AlcoholBomb(this.controller, this.getX(), this.getY());
+			DoctorShot shot = new AlcoholBomb(this.controller, this.getX()+50, this.getY()-5);
+			this.controller.addDoctorShot(shot);
+			Thread thread = new Thread(shot);
+			thread.start();
+			return shot;
 		} else {
 			return null;
 		}

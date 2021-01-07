@@ -1,10 +1,16 @@
 package kr.ac.woosuk.java.fsg.models.enemies;
 
 import java.awt.Graphics;
+import java.util.Random;
 
 import javax.swing.ImageIcon;
 
 import kr.ac.woosuk.java.fsg.controllers.Controller;
+import kr.ac.woosuk.java.fsg.models.items.AlcoholBombUp;
+import kr.ac.woosuk.java.fsg.models.items.Item;
+import kr.ac.woosuk.java.fsg.models.items.LifeUp;
+import kr.ac.woosuk.java.fsg.models.items.PowerUp;
+import kr.ac.woosuk.java.fsg.models.items.ThumbsUp;
 
 public class Virus extends Enemy{
 	
@@ -30,6 +36,21 @@ public class Virus extends Enemy{
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}
+		Random random = new Random();
+		int i = random.nextInt(20);
+		if(i == 0) {
+			Item item = new AlcoholBombUp(controller, this.getX(), this.getY());
+			this.controller.addItem(item);
+		} else if(i == 1){
+			Item item = new LifeUp(controller, this.getX(), this.getY());
+			this.controller.addItem(item);
+		} else if(i == 2){
+			Item item = new PowerUp(controller, this.getX(), this.getY());
+			this.controller.addItem(item);
+		} else if(i == 3){
+			Item item = new ThumbsUp(controller, this.getX(), this.getY());
+			this.controller.addItem(item);
 		}
 		this.controller.removeEnemy(this);
 	}

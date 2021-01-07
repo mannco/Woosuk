@@ -38,7 +38,7 @@ public abstract class Enemy extends JLabel implements Runnable {
 	}
 
 	public Item addItem() {
-		return new ThumbsUp(controller);
+		return new ThumbsUp(controller,this.getX(),this.getY());
 	}
 	
 	@Override

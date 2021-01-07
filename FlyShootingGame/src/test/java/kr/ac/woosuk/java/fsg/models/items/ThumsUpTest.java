@@ -14,7 +14,7 @@ class ThumsUpTest {
 	@Test
 	void 엄지척움직임_테스트() {
 		// 아이템 생성
-		Item item = new ThumbsUp(controller);
+		Item item = new ThumbsUp(controller,1,1);
 		item.moveRight();
 		assertEquals(1, item.getx());
 		

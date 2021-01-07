@@ -18,9 +18,8 @@ public class LifeUp extends Item {
 		super.paintComponent(g);
 	}
 
-	public LifeUp(Controller controller) {
-		super(controller);
-		// TODO Auto-generated constructor stub
+	public LifeUp(Controller controller, int x, int y) {
+		super(controller,x, y);
 	}
 
 	@Override
@@ -30,7 +29,7 @@ public class LifeUp extends Item {
 			try {
 				List<Doctor> doctors = this.controller.getDoctors();
 				for(Doctor doctor : doctors) {
-					if(this.getX()+75 >= doctor.getX() && this.getX() <= doctor.getX() && this.getY()+75 >= doctor.getY() && this.getY() <= doctor.getY()) {
+					if(this.getX()+35 >= doctor.getX() && this.getX() <= doctor.getX()+35 && this.getY()+35 >= doctor.getY() && this.getY() <= doctor.getY()+35) {
 						doctor.getLifeUp(this);
 						this.controller.removeItem(this);
 						break flag;

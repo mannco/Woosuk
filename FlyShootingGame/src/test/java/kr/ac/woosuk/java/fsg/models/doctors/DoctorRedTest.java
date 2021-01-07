@@ -42,7 +42,7 @@ class DoctorRedTest {
 	@Test
 	void 엄지척먹기_테스트() {
 		Doctor doctor = new DoctorRed(controller);
-		Item item = new ThumbsUp(controller);
+		Item item = new ThumbsUp(controller,1,1);
 		assertEquals(0, doctor.getScore());
 		doctor.getThumbsUp(item);
 		assertEquals(10, doctor.getScore());
@@ -53,7 +53,7 @@ class DoctorRedTest {
 	@Test
 	void 라이프업먹기_테스트() {
 		Doctor doctor = new DoctorRed(controller);
-		Item item = new LifeUp(controller);
+		Item item = new LifeUp(controller,1,1);
 		assertEquals(3, doctor.getLife());
 		doctor.getLifeUp(item);
 		assertEquals(4, doctor.getLife());
@@ -64,7 +64,7 @@ class DoctorRedTest {
 	@Test
 	void 폭탄먹기_테스트() {
 		Doctor doctor = new DoctorRed(controller);
-		Item item = new AlcoholBombUp(controller);
+		Item item = new AlcoholBombUp(controller,1,1);
 		assertEquals(3, doctor.getBombScore());
 		doctor.getBombUp(item);
 		assertEquals(4, doctor.getBombScore());
@@ -78,7 +78,7 @@ class DoctorRedTest {
 		//닥터 생성
 		Doctor doctor = new DoctorRed(controller);
 		//파워업 아이템 생성
-		Item item = new PowerUp(controller);
+		Item item = new PowerUp(controller,1,1);
 		//닥터가 파워업 아이템을 먹는다
 		doctor.getPowerUp(item);
 		

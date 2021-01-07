@@ -17,8 +17,8 @@ public class AlcoholBombUp extends Item {
 		super.paintComponent(g);
 	}
 
-	public AlcoholBombUp(Controller controller) {
-		super(controller);
+	public AlcoholBombUp(Controller controller, int x, int y) {
+		super(controller, x, y);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -30,7 +30,7 @@ public class AlcoholBombUp extends Item {
 			try {
 				List<Doctor> doctors = this.controller.getDoctors();
 				for(Doctor doctor : doctors) {
-					if(this.getX()+75 >= doctor.getX() && this.getX() <= doctor.getX() && this.getY()+75 >= doctor.getY() && this.getY() <= doctor.getY()) {
+					if(this.getX()+35 >= doctor.getX() && this.getX() <= doctor.getX()+35 && this.getY()+35 >= doctor.getY() && this.getY() <= doctor.getY()+35) {
 						doctor.getBombUp(this);
 						break flag;
 					}

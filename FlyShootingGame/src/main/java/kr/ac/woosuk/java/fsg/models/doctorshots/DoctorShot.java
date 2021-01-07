@@ -13,6 +13,7 @@ public abstract class DoctorShot extends JLabel implements Runnable {
    protected int position;
    protected int bombAttackPoint;
    protected Controller controller;
+   protected String path;
    
    public DoctorShot(Controller controller, int x, int y) {
 	   this.controller = controller;
@@ -35,10 +36,6 @@ public abstract class DoctorShot extends JLabel implements Runnable {
 		virus.attack(this.attackpoint);
 	}
 	
-	
-	public void attackAllEnemy(Enemy enemy) {
-		enemy.attack(this.attackpoint);
-	}
 	
 	public void attackAllEnemy(ArrayList<Enemy> list) {
 		for (Enemy enemy : list) {

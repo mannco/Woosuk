@@ -14,7 +14,7 @@ class PowerUpTest {
 	@Test
 	void 파워업움직임_테스트() {
 		// 아이템 생성
-		Item item = new PowerUp(controller);
+		Item item = new PowerUp(controller,1,1);
 		item.moveRight();
 		assertEquals(1, item.getx());
 		

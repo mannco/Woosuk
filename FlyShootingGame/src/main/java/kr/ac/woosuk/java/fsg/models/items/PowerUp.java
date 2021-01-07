@@ -16,8 +16,8 @@ public class PowerUp extends Item {
 		setOpaque(false);
 		super.paintComponent(g);
 	}
-public PowerUp(Controller controller) {
-	super(controller);
+public PowerUp(Controller controller, int x, int y) {
+	super(controller, x, y);
 	// TODO Auto-generated constructor stub
 		this.addPoint = 10;
 	}
@@ -28,7 +28,7 @@ public void run() {
 		try {
 			List<Doctor> doctors = this.controller.getDoctors();
 			for(Doctor doctor : doctors) {
-				if(this.getX()+75 >= doctor.getX() && this.getX() <= doctor.getX() && this.getY()+75 >= doctor.getY() && this.getY() <= doctor.getY()) {
+				if(this.getX()+35 >= doctor.getX() && this.getX() <= doctor.getX()+35 && this.getY()+35 >= doctor.getY() && this.getY() <= doctor.getY()+35) {
 					doctor.getPowerUp(this);
 					this.controller.removeItem(this);
 					break flag;

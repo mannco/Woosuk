@@ -14,7 +14,7 @@ class LifeUpTest {
 	@Test
 	void 라이프업움직임_테스트() {
 		// 아이템 생성
-		Item item = new LifeUp(controller);
+		Item item = new LifeUp(controller,1,1);
 		item.moveRight();
 		assertEquals(1, item.getx());
 		

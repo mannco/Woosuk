@@ -15,7 +15,7 @@ public abstract class Item extends JLabel implements Runnable {
 	
 	public Item(Controller controller) {
 		this.controller = controller;
-		this.setBounds(0, 0, 75, 75);
+		this.setBounds(0, 0, 35, 35);
 	}
 	
 	public void moveRight() {

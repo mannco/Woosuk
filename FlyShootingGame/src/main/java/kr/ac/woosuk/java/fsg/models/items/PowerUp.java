@@ -11,7 +11,7 @@ import kr.ac.woosuk.java.fsg.models.doctors.Doctor;
 public class PowerUp extends Item {
 	@Override
 	protected void paintComponent(Graphics g) {
-		ImageIcon bgImg = new ImageIcon(this.getClass().getResource("/kr/ac/woosuk/java/fsg/images/imgbacteria.png"));
+		ImageIcon bgImg = new ImageIcon(this.getClass().getResource("/kr/ac/woosuk/java/fsg/images/imgpowerup.png"));
 		g.drawImage(bgImg.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
 		setOpaque(false);
 		super.paintComponent(g);

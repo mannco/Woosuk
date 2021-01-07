@@ -24,7 +24,6 @@ public class AlcoholBombUp extends Item {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		int i =0;
 		flag : while (i < 5000) {
 			try {

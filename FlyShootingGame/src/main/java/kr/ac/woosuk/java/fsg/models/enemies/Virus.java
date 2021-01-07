@@ -42,15 +42,23 @@ public class Virus extends Enemy{
 		if(i == 0) {
 			Item item = new AlcoholBombUp(controller, this.getX(), this.getY());
 			this.controller.addItem(item);
+			Thread thread = new Thread(item);
+			thread.start();
 		} else if(i == 1){
 			Item item = new LifeUp(controller, this.getX(), this.getY());
 			this.controller.addItem(item);
+			Thread thread = new Thread(item);
+			thread.start();
 		} else if(i == 2){
 			Item item = new PowerUp(controller, this.getX(), this.getY());
 			this.controller.addItem(item);
+			Thread thread = new Thread(item);
+			thread.start();
 		} else if(i == 3){
 			Item item = new ThumbsUp(controller, this.getX(), this.getY());
 			this.controller.addItem(item);
+			Thread thread = new Thread(item);
+			thread.start();
 		}
 		this.controller.removeEnemy(this);
 	}

@@ -33,7 +33,6 @@ public class VirusShot extends EnemyShot {
 					if(this.getX() >= doctor.getX() && this.getX() <= doctor.getX()+75 && this.getY() >= doctor.getY() &&  this.getY() <= doctor.getY()+75) {
 						this.AttackDoctor(doctor);
 						this.controller.removeEnemyShot(this);
-						System.out.println(doctor.getLife());
 						break flag;
 					}
 				}

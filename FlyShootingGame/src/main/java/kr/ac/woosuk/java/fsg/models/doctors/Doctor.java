@@ -39,13 +39,19 @@ public abstract class Doctor extends JLabel implements Runnable {
 	public void run() {
 		while (this.life > 0) {
 			try {
-
-				
+				this.controller.changeLife(this);
+				this.controller.changeLifeBoard();
+				this.controller.changeBomb(this);
+				this.controller.changeBombBoard();
 				Thread.sleep(50);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
+		this.controller.changeLife(this);
+		this.controller.changeLifeBoard();
+		this.controller.changeBomb(this);
+		this.controller.changeBombBoard();
 		this.controller.removeDoctor(this);
 	}
 	
@@ -130,7 +136,8 @@ public abstract class Doctor extends JLabel implements Runnable {
 
 	public void getThumbsUp(Item item) {
 		if(item instanceof ThumbsUp) {
-		this.score += 10;
+		this.controller.addScore(10);
+		this.controller.changeScoreBoard();
 		}
 	}
 

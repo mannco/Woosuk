@@ -2,7 +2,9 @@ package kr.ac.woosuk.java.fsg.controllers;
 
 import kr.ac.woosuk.java.fsg.models.doctors.Doctor;
 import kr.ac.woosuk.java.fsg.models.doctors.DoctorRed;
+import kr.ac.woosuk.java.fsg.models.enemies.Bacteria;
 import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
+import kr.ac.woosuk.java.fsg.models.enemies.Germ;
 import kr.ac.woosuk.java.fsg.models.enemies.Virus;
 import kr.ac.woosuk.java.fsg.models.items.AlcoholBombUp;
 import kr.ac.woosuk.java.fsg.models.items.Item;
@@ -38,11 +40,17 @@ public class Stage1 implements Stage {
 		Thread thread = new Thread(enemy);
 		thread.start();
 		
-		Enemy enemy2 =  new Virus(this.controller);
+		Enemy enemy2 =  new Germ(this.controller);
 		this.controller.addEnemy(enemy2);
-		enemy2.setLocation(400, 200);
+		enemy2.setLocation(400, 100);
 		Thread thread2 = new Thread(enemy2);
 		thread2.start();
+		
+		Enemy enemy3 =  new Bacteria(this.controller);
+		this.controller.addEnemy(enemy3);
+		enemy3.setLocation(300, 100);
+		Thread thread3 = new Thread(enemy3);
+		thread3.start();
 	}
 
 	@Override

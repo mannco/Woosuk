@@ -41,7 +41,6 @@ public class Virus extends Enemy{
 				if(j%15 == 0) {
 				this.attack();
 				}
-				
 				j++;
 				Thread.sleep(200);
 			} catch (Exception e) {
@@ -72,6 +71,7 @@ public class Virus extends Enemy{
 			thread.start();
 		}
 		this.controller.removeEnemy(this);
+		this.controller.addScore(10);
 	}
 	
 }

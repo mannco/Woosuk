@@ -27,7 +27,8 @@ import kr.ac.woosuk.java.fsg.models.enemyshots.VirusShot;
 
 public class GameView extends JPanel implements Runnable {
 	private JLabel scoreBoard;
-	private JPanel lifeBoard;
+	private JLabel lifeBoard;
+	private JLabel bombBoard;
 	
 	private Controller controller;
 	
@@ -47,8 +48,10 @@ public class GameView extends JPanel implements Runnable {
 		this.setLayout(null);
 		this.scoreBoard = new ScoreBoard();
 		this.add(this.scoreBoard);
-		this.lifeBoard = new LifeBoard(this);
+		this.lifeBoard = new LifeBoard();
 		this.add(this.lifeBoard);
+		this.bombBoard = new BombBoard();
+		this.add(this.bombBoard);
 		
 		//TEST Doctor
 //		Doctor doctor = new DoctorRed(controller);
@@ -134,6 +137,18 @@ public class GameView extends JPanel implements Runnable {
             this.repaint();
         }
 			
+	}
+
+	public JLabel getScoreBoard() {
+		return this.scoreBoard;
+	}
+
+	public JLabel getLifeBoard() {
+		return this.lifeBoard;
+	}
+
+	public JLabel getBombBoard() {
+		return this.bombBoard;
 	}
 	
 }

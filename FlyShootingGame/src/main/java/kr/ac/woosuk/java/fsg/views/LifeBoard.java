@@ -1,19 +1,17 @@
 package kr.ac.woosuk.java.fsg.views;
 
-import java.awt.GridLayout;
-
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
-public class LifeBoard extends JPanel {
-	private GameView gameView;
+public class LifeBoard extends JLabel {
 	
-	public LifeBoard(GameView gameView) {
-		this.gameView = gameView;
-		this.setBounds(109, 10, 450, 84);
-		this.setOpaque(false);
-		this.setLayout(new GridLayout(1, 6, 3, 0));
-		JLabel empty = new JLabel();
-		this.add(empty);
+	public LifeBoard() {
+		super("0");
+		this.setBounds(17, 40, 70, 25);
+		this.setHorizontalAlignment(SwingConstants.CENTER);
+	}
+
+	public void changeLifeBoardLife(int life) {
+		this.setText(life+"");
 	}
 }

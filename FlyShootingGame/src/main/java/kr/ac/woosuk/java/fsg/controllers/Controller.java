@@ -9,7 +9,10 @@ import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 import kr.ac.woosuk.java.fsg.models.enemies.Virus;
 import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
 import kr.ac.woosuk.java.fsg.models.items.Item;
+import kr.ac.woosuk.java.fsg.views.BombBoard;
 import kr.ac.woosuk.java.fsg.views.GameView;
+import kr.ac.woosuk.java.fsg.views.LifeBoard;
+import kr.ac.woosuk.java.fsg.views.ScoreBoard;
 
 public class Controller implements Runnable {
 
@@ -21,6 +24,9 @@ public class Controller implements Runnable {
     private List<Item> items;
     private GameView gameView;
 	private List<Stage> stages;
+	private int score;
+	private int life;
+	private int bomb;
     
     public Controller(GameView gameview) {
     	this.gameView = gameview;
@@ -108,7 +114,31 @@ public class Controller implements Runnable {
 	public void createEnemy() {
 		
 	}
-
+	public void changeScoreBoard() {
+		ScoreBoard scoreBoard = (ScoreBoard) this.gameView.getScoreBoard();
+		scoreBoard.changeScoreBoardScore(this.score);
+	}
+	public void addScore(int score) {
+		this.score += score;
+		this.changeScoreBoard();
+	}
+	public void changeLifeBoard() {
+		LifeBoard lifeBoard = (LifeBoard) this.gameView.getLifeBoard();
+		lifeBoard.changeLifeBoardLife(this.life);
+	}
+	public void changeLife(Doctor doctor) {
+		this.life = doctor.getLife();
+		this.changeLifeBoard();
+	}
+	public void changeBombBoard() {
+		BombBoard bombBoard = (BombBoard) this.gameView.getBombBoard();
+		bombBoard.changeBombBoardBomb(this.bomb);
+	}
+	public void changeBomb(Doctor doctor) {
+		this.bomb = doctor.getBombScore();
+		this.changeBombBoard();
+	}
+	
 	@Override
 	public void run() {
 		for(Stage stage : this.stages) {
@@ -134,4 +164,5 @@ public class Controller implements Runnable {
 		}
 		return true;
 	}
+
 }

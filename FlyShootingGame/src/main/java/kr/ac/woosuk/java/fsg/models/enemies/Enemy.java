@@ -5,6 +5,7 @@ import kr.ac.woosuk.java.fsg.controllers.Controller;
 import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;
 import kr.ac.woosuk.java.fsg.models.doctorshots.Syringe;
 import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
+import kr.ac.woosuk.java.fsg.models.enemyshots.GermShot;
 import kr.ac.woosuk.java.fsg.models.enemyshots.VirusShot;
 import kr.ac.woosuk.java.fsg.models.items.Item;
 import kr.ac.woosuk.java.fsg.models.items.ThumbsUp;

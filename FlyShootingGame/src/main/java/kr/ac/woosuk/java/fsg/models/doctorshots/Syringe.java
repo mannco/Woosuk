@@ -11,7 +11,7 @@ public class Syringe extends DoctorShot {
 	
 	@Override
 	protected void paintComponent(Graphics g) {
-		ImageIcon bgImg = new ImageIcon(this.getClass().getResource("/kr/ac/woosuk/java/fsg/images/imgsyringe.png"));
+		ImageIcon bgImg = new ImageIcon(this.getClass().getResource(this.path));
 		g.drawImage(bgImg.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
 		setOpaque(false);
 		super.paintComponent(g);
@@ -26,6 +26,11 @@ public class Syringe extends DoctorShot {
 	public void run() {
 		flag : while (this.getY() >= 0) {
 			try {
+				if(this.attackpoint == 10) {
+					this.path = "/kr/ac/woosuk/java/fsg/images/imgsyringe.png";
+				} else if(this.attackpoint > 10) {
+					this.path = "/kr/ac/woosuk/java/fsg/images/imgsyringered.png";
+				}
 				this.setLocation(this.getX(), this.getY()-20);
 				List<Enemy> enemies = this.controller.getEnemies();
 				for(Enemy enemy : enemies) {

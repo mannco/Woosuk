@@ -1,5 +1,6 @@
 package kr.ac.woosuk.java.fsg.controllers;
 
+import kr.ac.woosuk.java.fsg.models.enemies.Bacteria;
 import kr.ac.woosuk.java.fsg.models.enemies.Boss;
 import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 
@@ -17,11 +18,9 @@ public class BossStage implements Stage {
 
 	@Override
 	public void runningStage() throws InterruptedException {
-		Enemy enemy =  new Boss(this.controller);
-		this.controller.addEnemy(enemy);
-		enemy.setLocation(250, 150);
-		Thread thread = new Thread(enemy);
-		thread.start();
+		
+		this.controller.createEnemy(new Boss(this.controller), 250, 150);
+	
 	}
 
 	@Override

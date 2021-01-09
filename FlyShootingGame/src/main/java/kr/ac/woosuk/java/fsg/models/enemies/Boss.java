@@ -118,10 +118,13 @@ public class Boss extends Enemy{
 						if(pattern2 == 7) {
 							this.setLocation(this.getX()+10, this.getY());
 							if(this.getX() >= 260) {
-								this.setLocation(this.getX(), this.getY()+10);
-								if(this.getY()>=150) {
-									pattern2 = 0;
-								}
+								pattern2++;
+							}
+						}
+						if(pattern2 == 8) {
+							this.setLocation(this.getX(), this.getY()+10);
+							if(this.getY()>=150) {
+								pattern2 = 0;
 							}
 						}
 					}

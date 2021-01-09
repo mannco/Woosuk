@@ -37,6 +37,7 @@ public class Controller implements Runnable {
     	this.items = new ArrayList<Item>();
     	this.stages = new ArrayList<Stage>();
 		this.stages.add(new Stage1(this));
+		this.stages.add(new BossStage(this));
 	}
     
 	public GameView getGameView() {

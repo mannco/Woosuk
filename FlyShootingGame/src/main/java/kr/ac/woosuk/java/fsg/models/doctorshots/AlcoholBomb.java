@@ -20,7 +20,7 @@ public class AlcoholBomb extends DoctorShot {
 	
 	public AlcoholBomb(Controller controller, int x, int y) {
 		super(controller,x,y);
-		this.attackpoint = 999;
+		this.attackpoint = 5000; //�ʱⰪ : 999
 		this.path = "/kr/ac/woosuk/java/fsg/images/imgalcoholbomb.png";
 	}
 

@@ -4,6 +4,8 @@ import javax.swing.JLabel;
 import kr.ac.woosuk.java.fsg.controllers.Controller;
 import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;
 import kr.ac.woosuk.java.fsg.models.doctorshots.Syringe;
+import kr.ac.woosuk.java.fsg.models.enemyshots.BossLazer;
+import kr.ac.woosuk.java.fsg.models.enemyshots.BossRush;
 import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
 import kr.ac.woosuk.java.fsg.models.enemyshots.GermShot;
 import kr.ac.woosuk.java.fsg.models.enemyshots.VirusShot;
@@ -31,6 +33,22 @@ public abstract class Enemy extends JLabel implements Runnable {
 
 	public EnemyShot attack() {
 		EnemyShot shot = new VirusShot(this.controller, this.getX()+34, this.getY());
+		this.controller.addEnemyShot(shot);
+		Thread thread = new Thread(shot);
+		thread.start();
+		return shot;
+	}
+	
+	public EnemyShot bosslazer() {
+		EnemyShot shot = new BossLazer(this.controller, this.getX(), this.getY());
+		this.controller.addEnemyShot(shot);
+		Thread thread = new Thread(shot);
+		thread.start();
+		return shot;
+	}
+	
+	public EnemyShot bossrush() {
+		EnemyShot shot = new BossRush(this.controller, this.getX(), this.getY());
 		this.controller.addEnemyShot(shot);
 		Thread thread = new Thread(shot);
 		thread.start();

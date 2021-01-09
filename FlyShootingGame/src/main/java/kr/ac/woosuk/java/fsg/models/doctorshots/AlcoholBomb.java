@@ -27,6 +27,7 @@ public class AlcoholBomb extends DoctorShot {
 	@Override
 	public void run() {
 		int i=0;
+		int j=0; //적에게 폭탄의 데미지가 1번만 들어가게 하기 위해 만들었습니다.
 		this.setBounds(this.getX()-50, this.getY(), 100, 100);
 		while (i < 53) {
 			try {
@@ -35,9 +36,12 @@ public class AlcoholBomb extends DoctorShot {
 					this.path = "/kr/ac/woosuk/java/fsg/images/imgsyringe.png";
 					this.setBounds(this.getX(), this.getY(), 300, 300);
 				List<Enemy> enemies = this.controller.getEnemies();
+				if(j ==0) {
 				for(Enemy enemy : enemies) {
 					this.attackEnemy(enemy);
 					System.out.println(enemy.getHppoint());
+					j++;
+					}
 				}
 				}
 				i++;

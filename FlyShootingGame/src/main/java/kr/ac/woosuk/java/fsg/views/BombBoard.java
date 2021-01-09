@@ -6,7 +6,7 @@ import javax.swing.SwingConstants;
 public class BombBoard extends JLabel{
 	public BombBoard() {
 		super("0");
-		this.setBounds(17, 40, 70, 25);
+		this.setBounds(-18, 733, 70, 25);
 		this.setHorizontalAlignment(SwingConstants.CENTER);
 	}
 

@@ -18,7 +18,6 @@ public class PowerUp extends Item {
 	}
 public PowerUp(Controller controller, int x, int y) {
 	super(controller, x, y);
-	// TODO Auto-generated constructor stub
 		this.addPoint = 10;
 	}
 @Override

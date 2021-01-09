@@ -12,7 +12,6 @@ public class VirusShot extends EnemyShot {
 	
 	public VirusShot(Controller controller, int x, int y) {
 		super(controller,x,y);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

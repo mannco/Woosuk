@@ -7,7 +7,7 @@ public class LifeBoard extends JLabel {
 	
 	public LifeBoard() {
 		super("0");
-		this.setBounds(17, 40, 70, 25);
+		this.setBounds(16, 733, 70, 25);
 		this.setHorizontalAlignment(SwingConstants.CENTER);
 	}
 

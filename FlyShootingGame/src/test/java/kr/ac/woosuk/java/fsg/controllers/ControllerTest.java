@@ -31,7 +31,7 @@ class ControllerTest {
     void 애너미생성_테스트() {
         Controller controller = new Controller(gameview);
         Enemy enemy = new Virus(controller);
-        controller.createEnemy();
+        controller.createEnemy(enemy,1,1);
         assertEquals(3, controller.getEnemies().size());
         controller.addEnemy(enemy);
         assertEquals(4, controller.getEnemies().size());

@@ -34,23 +34,12 @@ public class Stage1 implements Stage {
 	@Override
 	public void runningStage() throws InterruptedException {
 		
-		Enemy enemy =  new Virus(this.controller);
-		this.controller.addEnemy(enemy);
-		enemy.setLocation(200, 200);
-		Thread thread = new Thread(enemy);
-		thread.start();
+		this.controller.createEnemy(new Virus(this.controller), 200, 200);
 		
-		Enemy enemy2 =  new Germ(this.controller);
-		this.controller.addEnemy(enemy2);
-		enemy2.setLocation(400, 100);
-		Thread thread2 = new Thread(enemy2);
-		thread2.start();
+		this.controller.createEnemy(new Germ(this.controller), 400, 100);
 		
-		Enemy enemy3 =  new Bacteria(this.controller);
-		this.controller.addEnemy(enemy3);
-		enemy3.setLocation(300, 100);
-		Thread thread3 = new Thread(enemy3);
-		thread3.start();
+		this.controller.createEnemy(new Bacteria(this.controller), 300, 100);
+
 	}
 
 	@Override

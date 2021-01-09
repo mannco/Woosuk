@@ -112,8 +112,11 @@ public class Controller implements Runnable {
 		this.items.remove(item);
 		this.getGameView().remove(item);
 	}
-	public void createEnemy() {
-		
+	public void createEnemy(Enemy enemy, int x, int y) {
+		addEnemy(enemy);
+		enemy.setLocation(x, y);
+		Thread thread = new Thread(enemy);
+		thread.start();
 	}
 	public void changeScoreBoard() {
 		ScoreBoard scoreBoard = (ScoreBoard) this.gameView.getScoreBoard();

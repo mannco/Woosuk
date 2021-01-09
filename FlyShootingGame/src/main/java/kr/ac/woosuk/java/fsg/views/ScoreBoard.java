@@ -7,7 +7,7 @@ import javax.swing.SwingConstants;
 public class ScoreBoard extends JLabel {
 	public ScoreBoard() {
 		super("0");
-		this.setBounds(50, 700, 70, 25);
+		this.setBounds(60, 42, 1, 1);
 		this.setHorizontalAlignment(SwingConstants.CENTER);
 	}
 	public void changeScoreBoardScore(int score) {

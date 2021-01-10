@@ -2,18 +2,7 @@ package kr.ac.woosuk.java.fsg.controllers;
 
 import kr.ac.woosuk.java.fsg.models.doctors.Doctor;
 import kr.ac.woosuk.java.fsg.models.doctors.DoctorRed;
-import kr.ac.woosuk.java.fsg.models.enemies.Bacteria;
-import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
-import kr.ac.woosuk.java.fsg.models.enemies.Germ;
 import kr.ac.woosuk.java.fsg.models.enemies.Virus;
-import kr.ac.woosuk.java.fsg.models.enemyshots.BossLazer;
-import kr.ac.woosuk.java.fsg.models.enemyshots.BossRush;
-import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
-import kr.ac.woosuk.java.fsg.models.items.AlcoholBombUp;
-import kr.ac.woosuk.java.fsg.models.items.Item;
-import kr.ac.woosuk.java.fsg.models.items.LifeUp;
-import kr.ac.woosuk.java.fsg.models.items.PowerUp;
-import kr.ac.woosuk.java.fsg.models.items.ThumbsUp;
 
 
 public class Stage1 implements Stage {
@@ -37,16 +26,23 @@ public class Stage1 implements Stage {
 	@Override
 	public void runningStage() throws InterruptedException {
 		
-		this.controller.createEnemy(new Virus(this.controller), 200, 200);
-		this.controller.createEnemy(new Germ(this.controller), 400, 100);
-		this.controller.createEnemy(new Bacteria(this.controller), 300, 100);
-
+		this.controller.createEnemy(new Virus(this.controller), 0, 0);
+		this.controller.createEnemy(new Virus(this.controller), 120, 0);
+		this.controller.createEnemy(new Virus(this.controller), 240, 0);
+		this.controller.createEnemy(new Virus(this.controller), 360, 0);
+		this.controller.createEnemy(new Virus(this.controller), 480, 0);
 	}
 
 	@Override
 	public void endStage() throws InterruptedException {
 		Thread.sleep(2000);
 		System.out.println("Stage 1 Completed.");
+	}
+	
+	@Override
+	public void gameOver() throws InterruptedException {
+		System.out.println("´ÚÅÍ°¡ Á×¾ú½À´Ï´Ù.");
+		Thread.sleep(10000000);
 	}
 
 }

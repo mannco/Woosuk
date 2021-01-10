@@ -20,7 +20,7 @@ public class AlcoholBomb extends DoctorShot {
 	
 	public AlcoholBomb(Controller controller, int x, int y) {
 		super(controller,x,y);
-		this.attackpoint = 5000; //초기값 : 999
+		this.attackpoint = 999; //초기값 : 999
 		this.path = "/kr/ac/woosuk/java/fsg/images/imgalcoholbomb.png";
 	}
 
@@ -39,7 +39,6 @@ public class AlcoholBomb extends DoctorShot {
 				if(j ==0) {
 				for(Enemy enemy : enemies) {
 					this.attackEnemy(enemy);
-					System.out.println(enemy.getHppoint());
 					j++;
 					}
 				}

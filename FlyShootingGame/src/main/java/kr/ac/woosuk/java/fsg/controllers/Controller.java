@@ -6,7 +6,6 @@ import java.util.List;
 import kr.ac.woosuk.java.fsg.models.doctors.Doctor;
 import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;
 import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
-import kr.ac.woosuk.java.fsg.models.enemies.Virus;
 import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
 import kr.ac.woosuk.java.fsg.models.items.Item;
 import kr.ac.woosuk.java.fsg.views.BombBoard;
@@ -36,7 +35,11 @@ public class Controller implements Runnable {
     	this.doctors = new ArrayList<Doctor>();
     	this.items = new ArrayList<Item>();
     	this.stages = new ArrayList<Stage>();
-		this.stages.add(new Stage1(this));
+    	this.stages.add(new Stage1(this));
+    	this.stages.add(new Stage2(this));
+    	this.stages.add(new Stage3(this));
+    	this.stages.add(new Stage4(this));
+    	this.stages.add(new Stage5(this));
 		this.stages.add(new BossStage(this));
 	}
     
@@ -149,11 +152,14 @@ public class Controller implements Runnable {
 			try {
 				stage.startStage();
 				stage.runningStage();
-				while(!this.isCompleteStage()) {
+				while(!this.isCompleteStage() && !this.DoctorDie()) {
 					Thread.sleep(100);
 				}
 				if(this.isCompleteStage()) {
 				stage.endStage();
+				}
+				if(this.DoctorDie()) {
+				stage.gameOver();
 				}
 			} catch(InterruptedException e) {
 				e.printStackTrace();
@@ -162,11 +168,16 @@ public class Controller implements Runnable {
 		System.out.println("All Stage Complete!!");
 	}
 	public boolean isCompleteStage() {
-	
 			if(getEnemies().size() > 0) {
 				return false;
 		}
 		return true;
+	}
+	public boolean DoctorDie() {
+		if(getDoctors().size() > 0) {
+			return false;
+		}
+	return true;
 	}
 
 }

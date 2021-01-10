@@ -1,8 +1,6 @@
 package kr.ac.woosuk.java.fsg.controllers;
 
-import kr.ac.woosuk.java.fsg.models.enemies.Bacteria;
 import kr.ac.woosuk.java.fsg.models.enemies.Boss;
-import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 
 public class BossStage implements Stage {
 	private Controller controller;
@@ -13,7 +11,7 @@ public class BossStage implements Stage {
 	@Override
 	public void startStage() throws InterruptedException {
 		System.out.println("Boss Stage start");
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 	}
 
 	@Override
@@ -27,5 +25,11 @@ public class BossStage implements Stage {
 	public void endStage() throws InterruptedException {
 		Thread.sleep(2000);
 		System.out.println("Boss Stage Completed.");
+	}
+	
+	@Override
+	public void gameOver() throws InterruptedException {
+		System.out.println("´ÚÅÍ°¡ Á×¾ú½À´Ï´Ù. GAME OVER");
+		Thread.sleep(10000000);
 	}
 }

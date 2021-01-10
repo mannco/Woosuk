@@ -53,6 +53,9 @@ public class Bacteria extends Enemy{
 				}
 				j++;
 				Thread.sleep(200);
+				if(this.hppoint <= 0) {
+					this.controller.removeEnemy(this);
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

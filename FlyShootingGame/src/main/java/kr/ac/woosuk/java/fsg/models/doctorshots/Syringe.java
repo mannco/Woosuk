@@ -36,7 +36,6 @@ public class Syringe extends DoctorShot {
 				for(Enemy enemy : enemies) {
 					if(this.getX() <= enemy.getX()+75 && this.getX() >= enemy.getX() && this.getY()-5 <= enemy.getY()) {
 						this.attackEnemy(enemy);
-						System.out.println(enemy.getHppoint());
 						this.controller.removeDoctorShot(this);
 						break flag;
 					}

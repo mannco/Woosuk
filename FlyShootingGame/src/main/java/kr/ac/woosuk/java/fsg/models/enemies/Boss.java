@@ -33,6 +33,7 @@ public class Boss extends Enemy{
 		int pattern = 1;
 		int pattern1 = 0;
 		int pattern2 = 0;
+		int hp = 0; //보스의 남은 hp 알리기 위해 만들었습니다.
 		while (this.hppoint > 0) {
 			while (this.hppoint > 0) {
 				try {
@@ -128,7 +129,10 @@ public class Boss extends Enemy{
 							}
 						}
 					}
-					
+					if(this.hppoint != hp) {
+						System.out.println("보스의 남은 체력 : "+this.hppoint);
+					}
+					hp = this.hppoint;
 					if(attackdelay%10 == 0) {
 					this.attack();
 					}

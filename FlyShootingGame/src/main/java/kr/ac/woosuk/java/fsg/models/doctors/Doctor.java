@@ -3,7 +3,6 @@ package kr.ac.woosuk.java.fsg.models.doctors;
 import java.awt.event.KeyAdapter;
 
 import java.awt.event.KeyEvent;
-import java.util.List;
 
 import javax.swing.JLabel;
 
@@ -12,13 +11,11 @@ import kr.ac.woosuk.java.fsg.controllers.Controller;
 import kr.ac.woosuk.java.fsg.models.doctorshots.AlcoholBomb;
 import kr.ac.woosuk.java.fsg.models.doctorshots.DoctorShot;
 import kr.ac.woosuk.java.fsg.models.doctorshots.Syringe;
-import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 import kr.ac.woosuk.java.fsg.models.items.AlcoholBombUp;
 import kr.ac.woosuk.java.fsg.models.items.Item;
 import kr.ac.woosuk.java.fsg.models.items.LifeUp;
 import kr.ac.woosuk.java.fsg.models.items.PowerUp;
 import kr.ac.woosuk.java.fsg.models.items.ThumbsUp;
-import kr.ac.woosuk.java.fsg.views.GameView;
 
 public abstract class Doctor extends JLabel implements Runnable {
 	protected int score;
@@ -32,7 +29,6 @@ public abstract class Doctor extends JLabel implements Runnable {
 	boolean Right;
 	boolean shot;
 	
-	private Doctor doctor;
 	protected Controller controller;
 	
 	@Override

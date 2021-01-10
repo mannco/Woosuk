@@ -60,7 +60,6 @@ public class Germ extends Enemy{
 					k = 0;
 					l = 0;
 				}
-				
 				if(this.getY() >= 800) {
 					this.controller.removeEnemy(this);
 				}
@@ -69,6 +68,9 @@ public class Germ extends Enemy{
 				}
 				j++;
 				Thread.sleep(200);
+				if(this.hppoint <= 0) {
+					this.controller.removeEnemy(this);
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

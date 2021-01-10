@@ -1,37 +1,39 @@
 package kr.ac.woosuk.java.fsg.controllers;
 
 import kr.ac.woosuk.java.fsg.models.enemies.Bacteria;
-import kr.ac.woosuk.java.fsg.models.enemies.Virus;
+import kr.ac.woosuk.java.fsg.models.enemies.Germ;
 
-public class Stage2 implements Stage {
-
+public class Stage4 implements Stage {
 	private Controller controller;
 	
-	public Stage2(Controller controller) {
+	public Stage4(Controller controller) {
 		this.controller = controller;
 	}
 	@Override
 	public void startStage() throws InterruptedException {
-		System.out.println("Stage 2 start");
+		System.out.println("Stage 4 start");
 		Thread.sleep(5000);
 	}
 
 	@Override
 	public void runningStage() throws InterruptedException {
-		
-		this.controller.createEnemy(new Virus(this.controller), 0, 0);
-		this.controller.createEnemy(new Virus(this.controller), 480, 0);
-		
+		this.controller.createEnemy(new Bacteria(this.controller), 0, 100);
 		this.controller.createEnemy(new Bacteria(this.controller), 120, 0);
 		this.controller.createEnemy(new Bacteria(this.controller), 240, 100);
 		this.controller.createEnemy(new Bacteria(this.controller), 360, 0);
-		this.controller.createEnemy(new Bacteria(this.controller), 500, 100);
+		this.controller.createEnemy(new Bacteria(this.controller), 480, 0);
+
+		this.controller.createEnemy(new Germ(this.controller), 0, 200);
+		this.controller.createEnemy(new Germ(this.controller), 120, 100);
+		this.controller.createEnemy(new Germ(this.controller), 240, 200);
+		this.controller.createEnemy(new Germ(this.controller), 360, 100);
+		this.controller.createEnemy(new Germ(this.controller), 480, 200);
 	}
 
 	@Override
 	public void endStage() throws InterruptedException {
 		Thread.sleep(2000);
-		System.out.println("Stage 2 Completed.");
+		System.out.println("Stage 4 Completed.");
 	}
 
 	@Override

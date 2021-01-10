@@ -43,6 +43,9 @@ public class Virus extends Enemy{
 				}
 				j++;
 				Thread.sleep(200);
+				if(this.hppoint <= 0) {
+					this.controller.removeEnemy(this);
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -70,8 +73,9 @@ public class Virus extends Enemy{
 			Thread thread = new Thread(item);
 			thread.start();
 		}
-		this.controller.removeEnemy(this);
 		this.controller.addScore(10);
+		this.controller.removeEnemy(this);
+		
 	}
 	
 }

@@ -29,6 +29,7 @@ public void run() {
 			for(Doctor doctor : doctors) {
 				if(this.getX()+35 >= doctor.getX() && this.getX() <= doctor.getX()+35 && this.getY()+35 >= doctor.getY() && this.getY() <= doctor.getY()+35) {
 					doctor.getPowerUp(this);
+					System.out.println("닥터 공격력 증가");
 					this.controller.removeItem(this);
 					break flag;
 				}

@@ -30,9 +30,10 @@ public class BossLazer extends EnemyShot {
 		while (i < 250) {
 			try {
 				List<Doctor> doctors = this.controller.getDoctors();
+				if(j == 0) {
 				for(Doctor doctor : doctors) {
-					if(j == 0) {
-					if(this.getX() >= doctor.getX() && this.getX() <= doctor.getX()+75 && this.getY() >= doctor.getY() &&  this.getY() <= doctor.getY()+75) {
+					if(this.getX()+115 >= doctor.getX() && this.getX()-20 <= doctor.getX()) {
+						//오른쪽								왼쪽범위
 						this.AttackDoctor(doctor);
 						j++;
 					}

@@ -6,6 +6,9 @@ import kr.ac.woosuk.java.fsg.models.enemies.Bacteria;
 import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 import kr.ac.woosuk.java.fsg.models.enemies.Germ;
 import kr.ac.woosuk.java.fsg.models.enemies.Virus;
+import kr.ac.woosuk.java.fsg.models.enemyshots.BossLazer;
+import kr.ac.woosuk.java.fsg.models.enemyshots.BossRush;
+import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
 import kr.ac.woosuk.java.fsg.models.items.AlcoholBombUp;
 import kr.ac.woosuk.java.fsg.models.items.Item;
 import kr.ac.woosuk.java.fsg.models.items.LifeUp;
@@ -35,9 +38,7 @@ public class Stage1 implements Stage {
 	public void runningStage() throws InterruptedException {
 		
 		this.controller.createEnemy(new Virus(this.controller), 200, 200);
-		
 		this.controller.createEnemy(new Germ(this.controller), 400, 100);
-		
 		this.controller.createEnemy(new Bacteria(this.controller), 300, 100);
 
 	}

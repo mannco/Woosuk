@@ -33,7 +33,7 @@ public class BossRush extends EnemyShot {
 				List<Doctor> doctors = this.controller.getDoctors();
 				for(Doctor doctor : doctors) {
 					if(j == 0) {
-					if(this.getX() >= doctor.getX() && this.getX() <= doctor.getX()+75 && this.getY() >= doctor.getY() &&  this.getY() <= doctor.getY()+75) {
+					if(this.getX()+75 >= doctor.getX() && this.getX()-75 <= doctor.getX() && this.getY() >= doctor.getY() &&  this.getY() <= doctor.getY()+75) {
 						this.AttackDoctor(doctor);
 						j++;
 					}

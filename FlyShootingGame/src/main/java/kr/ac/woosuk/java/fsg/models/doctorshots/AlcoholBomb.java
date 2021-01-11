@@ -33,7 +33,7 @@ public class AlcoholBomb extends DoctorShot {
 			try {
 				this.setLocation(this.getX(), this.getY()-10);
 				if(i >= 50) {
-					this.path = "/kr/ac/woosuk/java/fsg/images/imgsyringe.png";
+					this.path = "/kr/ac/woosuk/java/fsg/images/imgbombeffect.png";
 					this.setBounds(this.getX(), this.getY(), 300, 300);
 				List<Enemy> enemies = this.controller.getEnemies();
 				if(j ==0) {

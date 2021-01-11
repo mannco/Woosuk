@@ -9,10 +9,10 @@ import kr.ac.woosuk.java.fsg.models.doctors.DoctorRed;
 import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 import kr.ac.woosuk.java.fsg.models.enemies.Virus;
 import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
-import kr.ac.woosuk.java.fsg.models.enemyshots.VirusShot;
+import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyBullet;
 import kr.ac.woosuk.java.fsg.views.GameView;
 
-class VirusShotTest {
+class EnemyBulletTest {
 	
 	GameView gameView = new GameView();
 	Controller controller = new Controller(gameView);
@@ -21,7 +21,7 @@ class VirusShotTest {
 	void 공격테스트() {
 		Enemy enemy = new Virus(controller);	//바이러스 생성
 		
-		EnemyShot enemyShot = new VirusShot(controller,1,1);	//발사체 생성
+		EnemyShot enemyShot = new EnemyBullet(controller,1,1);	//발사체 생성
 		assertEquals(1, enemyShot.getAttackpoint());	//발사체 공격력 확인
 		
 		Doctor doctor = new DoctorRed(controller);	//의사 생성
@@ -34,7 +34,7 @@ class VirusShotTest {
 	
 	@Test
 	void 움직임테스트() {
-		EnemyShot enemyShot = new VirusShot(controller,1,1);	//바이러스샷 생성
+		EnemyShot enemyShot = new EnemyBullet(controller,1,1);	//바이러스샷 생성
 		assertEquals(1, enemyShot.getY());
 	}
 

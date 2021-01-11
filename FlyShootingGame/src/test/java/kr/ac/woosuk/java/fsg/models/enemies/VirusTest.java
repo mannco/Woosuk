@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import kr.ac.woosuk.java.fsg.controllers.Controller;
 import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
-import kr.ac.woosuk.java.fsg.models.enemyshots.VirusShot;
+import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyBullet;
 import kr.ac.woosuk.java.fsg.views.GameView;
 
 
@@ -27,7 +27,7 @@ class VirusTest {
 		
 		EnemyShot shot = enemy.attack();
 		assertNotNull(shot);
-		assertTrue(shot instanceof VirusShot);
+		assertTrue(shot instanceof EnemyBullet);
 	}
 	
 	@Test

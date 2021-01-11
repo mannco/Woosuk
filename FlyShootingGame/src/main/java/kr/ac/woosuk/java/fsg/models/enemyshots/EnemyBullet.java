@@ -8,9 +8,9 @@ import javax.swing.ImageIcon;
 import kr.ac.woosuk.java.fsg.controllers.Controller;
 import kr.ac.woosuk.java.fsg.models.doctors.Doctor;
 
-public class VirusShot extends EnemyShot {
+public class EnemyBullet extends EnemyShot {
 	
-	public VirusShot(Controller controller, int x, int y) {
+	public EnemyBullet(Controller controller, int x, int y) {
 		super(controller,x,y);
 	}
 

@@ -19,11 +19,8 @@ import kr.ac.woosuk.java.fsg.models.enemies.Boss;
 import kr.ac.woosuk.java.fsg.models.enemies.Enemy;
 import kr.ac.woosuk.java.fsg.models.enemies.Germ;
 import kr.ac.woosuk.java.fsg.models.enemies.Virus;
-import kr.ac.woosuk.java.fsg.models.enemyshots.BacteriaShot;
-import kr.ac.woosuk.java.fsg.models.enemyshots.BossShot;
 import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyShot;
-import kr.ac.woosuk.java.fsg.models.enemyshots.GermShot;
-import kr.ac.woosuk.java.fsg.models.enemyshots.VirusShot;
+import kr.ac.woosuk.java.fsg.models.enemyshots.EnemyBullet;
 
 public class GameView extends JPanel implements Runnable {
 	private JLabel scoreBoard;
